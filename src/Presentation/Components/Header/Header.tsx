@@ -26,18 +26,18 @@ export default function Header() {
                     <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => history('/about/')}>About</Button></ListItem>
                     <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => history('/contact/')}>Contact</Button></ListItem>
                 </Flex>
-                
+
                 <Flex justifyContent='space-between' alignItems='center' gap='2.5rem'>
-                <ListItem><FaRegUser size='1.75rem'/></ListItem>
-                <ListItem><IoSearchSharp size='1.75rem'/></ListItem>
-                <ListItem><FaRegHeart size='1.75rem'/></ListItem>
-                <ListItem><MdOutlineShoppingCart size='1.75rem'/></ListItem>
+                    <ListItem><FaRegUser className='headerSvg' /></ListItem>
+                    <ListItem><IoSearchSharp className='headerSvg' /></ListItem>
+                    <ListItem><FaRegHeart className='headerSvg' /></ListItem>
+                    <ListItem><MdOutlineShoppingCart className='headerSvg' /></ListItem>
                 </Flex>
             </>)
         else
             return (<>
                 <Sidebar />
-                <ListItem mr='1rem'><MdOutlineShoppingCart size='1.75rem'/></ListItem>
+                <ListItem mr='1rem'><MdOutlineShoppingCart className='headerSvg' /></ListItem>
             </>)
     }
     return (

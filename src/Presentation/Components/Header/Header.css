@@ -5,7 +5,10 @@ nav {
     background: white;
     margin: 0;
     height: 6.25rem;
+    padding: 0 6rem 0 3rem;
 }
+
+
 
 ul {
     height: 100%;
@@ -19,16 +22,27 @@ li {
     list-style: none;
 }
 
-div > li > button{
-    text-align: center; 
+.headerSvg {
+    width: 1.75rem;
+    height: 1.75rem;
+    cursor: pointer;
+}
+
+.headerSvg:hover {
+    color: var(--secundary);
+}
+
+div>li>button {
+    text-align: center;
     text-decoration: none !important;
     background: none;
     color: black !important;
     padding: 0.5rem 1rem !important;
 }
 
-div > li > button:hover{
-    background: var(--gray-01);
+div>li>button:hover {
+    background: var(--gray-02);
+    color: var(--secundary) !important;
 }
 
 a {
@@ -37,4 +51,41 @@ a {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+
+@media only screen and (max-width: 1280px) {
+    nav {
+        padding: 0 1rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    nav {
+        padding: 0;
+    }
+
+    ul {
+        gap: 0 1rem;
+    }
+
+    div>li>button {
+        padding: 0.5rem !important;
+        font-size: 1rem !important;
+    }
+
+    .headerSvg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .headerSvg {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
 }
