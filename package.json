@@ -1,8 +1,7 @@
 {
-  "name": "catalog-front",
+  "name": "desafio-03-compass",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://diegovsouza.github.io/catalog-front/",
   "dependencies": {
     "@babel/preset-env": "^7.24.3",
     "@babel/preset-react": "^7.24.1",
