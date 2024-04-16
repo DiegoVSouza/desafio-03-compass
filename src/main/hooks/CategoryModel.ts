@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Category, CategoryPost, CategoryPut } from "../../Domain/Model/Category";
+import { Category, CategoryGet, CategoryPost, CategoryPut } from "../../Domain/Model/Category";
 import { CategoryRepositoryImpl } from "../../Data/Repository/CategoryRepositoryImpl";
 import { GetCategorys } from "../../Domain/UseCase/Category/GetCategorys";
 import { PostCategorys } from "../../Domain/UseCase/Category/PostCategorys";
@@ -19,8 +19,8 @@ export default function CategoryModel() {
   const putCategorysUseCase = new PutCategorys(categorysRepositoryImpl);
   const deleteCategorysUseCase = new DeleteCategorys(categorysRepositoryImpl);
 
-  async function getCategorys() {
-    setCategorys(await getCategorysUseCase.invoke());
+  async function getCategorys(params?:CategoryGet) {
+    setCategorys(await getCategorysUseCase.invoke(params));
   }
   async function postCategorys(data:CategoryPost) {
     setCategory(await postCategorysUseCase.invoke(data));

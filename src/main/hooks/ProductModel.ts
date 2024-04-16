@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Product, ProductPost, ProductPut } from "../../Domain/Model/Product";
+import { Product, ProductGet, ProductPost, ProductPut } from "../../Domain/Model/Product";
 import { ProductRepositoryImpl } from "../../Data/Repository/ProductRepositoryImpl";
 import { GetProducts } from "../../Domain/UseCase/Product/GetProducts";
 import { PostProducts } from "../../Domain/UseCase/Product/PostProducts";
@@ -19,8 +19,8 @@ export default function ProductModel() {
   const putProductsUseCase = new PutProducts(productsRepositoryImpl);
   const deleteProductsUseCase = new DeleteProducts(productsRepositoryImpl);
 
-  async function getProducts() {
-    setProducts(await getProductsUseCase.invoke());
+  async function getProducts(params?: ProductGet) {
+    setProducts(await getProductsUseCase.invoke(params));
   }
   async function postProducts(data:ProductPost) {
     setProduct(await postProductsUseCase.invoke(data));

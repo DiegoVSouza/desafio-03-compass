@@ -1,4 +1,4 @@
-import { ProductPost, ProductPut } from "../../Domain/Model/Product";
+import { ProductGet, ProductPost, ProductPut } from "../../Domain/Model/Product";
 import { ProductRepository } from "../../Domain/Repository/ProductRepository";
 import ProjectDataSource from "../DataSource/ProductDataSource";
 
@@ -9,8 +9,8 @@ export class ProductRepositoryImpl implements ProductRepository {
     this.dataSource = _datasource;
   }
 
-  async getProducts() {
-    return this.dataSource.getProducts();
+  async getProducts(params?: ProductGet) {
+    return this.dataSource.getProducts(params);
   }
   async postProducts(data:ProductPost) {
     return this.dataSource.postProducts(data);

@@ -1,18 +1,36 @@
-import { CategoryPost, CategoryPut } from "../../Domain/Model/Category";
+import { CategoryGet, CategoryPost, CategoryPut } from "../../Domain/Model/Category";
 import { api } from "../Services/api";
 import CategoryDataSource from "../DataSource/CategoryDataSource";
 import { CategoryAPIEntity } from "../Entity/CategoryAPIEntity";
 
 export default class CategoryAPIDataSourceImpl implements CategoryDataSource {
-  async getCategorys(): Promise<CategoryAPIEntity[]> {
+  async getCategorys(params: CategoryGet): Promise<CategoryAPIEntity[]> {
     try {
-      const { data } = await api.get('/api/v1/category')
+      let url = '/api/v1/category'; 
+      let isFirstParam = true; 
+      
+      if(params){
+        for (const key in params) {
+          if (Object.prototype.hasOwnProperty.call(params, key)) {
+            const value = params[key];
+            if (isFirstParam) {
+              url += `?${key}=${value}`;
+              isFirstParam = false;
+            } else {
+              url += `&${key}=${value}`;
+            }
+          }
+        }
+      }
+  
+      const { data } = await api.get(url);
       return data;
     } catch (error: any) {
-      console.log(error.response.data)
+      console.log(error);
       return [] as CategoryAPIEntity[];
     }
   }
+  
 
   async postCategorys(postData: CategoryPost): Promise<CategoryAPIEntity> {
     try {

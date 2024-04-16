@@ -7,6 +7,13 @@ export interface Category {
   updated_date: Date,
 }
 
+
+export interface CategoryGet{
+  [key: string]: string | number | undefined;
+  id?: string;
+  limit?: number;
+}
+
 export interface CategoryPost {
   name: string,
   description: string,

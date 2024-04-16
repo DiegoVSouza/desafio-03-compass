@@ -19,6 +19,12 @@ export interface Product {
   updated_date: Date;
 }
 
+export interface ProductGet{
+  [key: string]: string | number | undefined;
+  id?: string;
+  limit?: number;
+}
+
 export interface ProductPost {
   name: string;
   categoryId: string;

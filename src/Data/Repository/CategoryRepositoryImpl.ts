@@ -1,4 +1,4 @@
-import { CategoryPost, CategoryPut } from "../../Domain/Model/Category";
+import { CategoryGet, CategoryPost, CategoryPut } from "../../Domain/Model/Category";
 import { CategoryRepository } from "../../Domain/Repository/CategoryRepository";
 import ProjectDataSource from "../DataSource/CategoryDataSource";
 
@@ -9,8 +9,8 @@ export class CategoryRepositoryImpl implements CategoryRepository {
     this.dataSource = _datasource;
   }
 
-  async getCategorys() {
-    return this.dataSource.getCategorys();
+  async getCategorys(params?:CategoryGet) {
+    return this.dataSource.getCategorys(params);
   }
   async postCategorys(data:CategoryPost) {
     return this.dataSource.postCategorys(data);

@@ -1,4 +1,4 @@
-import { Category } from "../../Model/Category";
+import { Category, CategoryGet } from "../../Model/Category";
 import { CategoryRepository } from "../../Repository/CategoryRepository";
 
 export interface GetCategorysUseCase {
@@ -11,7 +11,7 @@ export class GetCategorys implements GetCategorysUseCase {
     this.categoryRepo = _categoryRepo;
   }
 
-  async invoke() {
-    return this.categoryRepo.getCategorys();
+  async invoke(parms?:CategoryGet) {
+    return this.categoryRepo.getCategorys(parms);
   }
 }

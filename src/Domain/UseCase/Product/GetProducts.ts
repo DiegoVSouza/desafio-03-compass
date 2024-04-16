@@ -1,4 +1,4 @@
-import { Product } from "../../Model/Product";
+import { Product, ProductGet } from "../../Model/Product";
 import { ProductRepository } from "../../Repository/ProductRepository";
 
 export interface GetProductsUseCase {
@@ -11,7 +11,7 @@ export class GetProducts implements GetProductsUseCase {
     this.productRepo = _productRepo;
   }
 
-  async invoke() {
-    return this.productRepo.getProducts();
+  async invoke(params?: ProductGet) {
+    return this.productRepo.getProducts(params);
   }
 }
