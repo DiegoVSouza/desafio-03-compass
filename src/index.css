@@ -1,0 +1,52 @@
+:root {
+  --red-01: #e97171;
+  --red-02: #ad1f28;
+  --green-01: #2ec1ac;
+  --orange-01: #FAF3EA;
+  --orange-02: #b88e2f;
+  --gray-01: #898989;
+  --gray-02: #e4e4eb;
+  --black-01: #242424;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  /* background: rgb(127, 3, 127);
+  background: linear-gradient(0deg, rgba(127, 3, 127, 1) 0%, rgba(43, 0, 39, 1) 100%); */
+  scroll-behavior: smooth;
+}
+
+main{
+  /* padding: 1rem 2rem; */
+  min-height: calc(100vh - 7rem)
+}
+
+/* @media only screen and (max-width: 600px) {
+  main {
+    padding: 0.5rem 1rem; 
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  main {
+    padding: 0.75rem 1.5rem; 
+  }
+} */
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.primary{
+  color: white !important;
+  background: var(--red-01) !important;
+}
+
+.secundary{
+  color: white !important;
+  background: var(--orange-01) !important;
+}
