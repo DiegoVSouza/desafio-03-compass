@@ -9,8 +9,6 @@
 
 .text-box{
     position: absolute;
-    height: 65%;
-    width: 50%;
     right: 3.6rem;
     background-color: var(--primary);
     bottom: 0;
