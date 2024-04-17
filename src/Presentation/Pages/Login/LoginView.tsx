@@ -1,16 +1,14 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { Creators as Auth } from '../../../store/modules/authentication/actions'
 import { Box, Button, Flex, FormControl, Image, Text, useColorMode } from "@chakra-ui/react";
-import { api } from '../../../Data/Services/api';
 import * as yup from "yup";
-import { Login, UserStore } from '../../../Domain/Model/Token';
+import { Login } from '../../../Domain/Model/Token';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import InputComponent from '../../Components/Input/InputComponent';
+import InputComponent from '../../Components/Inputs/InputComponent';
 import logo from '../../assets/images/logo.svg'
 import './LoginView.css'
-import { useEffect, useState } from 'react';
 
 const loginSchema = yup
     .object({
