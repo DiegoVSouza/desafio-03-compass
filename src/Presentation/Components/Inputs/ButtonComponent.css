@@ -1,0 +1,9 @@
+button{
+    color: var(--secundary) !important;
+    background: white !important;
+    border-radius: 0 !important;
+}
+
+.full{
+    border: solid 1px var(--secundary);
+}
