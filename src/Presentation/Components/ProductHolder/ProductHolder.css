@@ -1,0 +1,14 @@
+#filter-menu {
+    color: black;
+    background-color: var(--primary);
+}
+
+#filter-menu div > * {
+    cursor: pointer;
+}
+
+#number-resume{
+    border-left: solid 2px #9F9F9F;
+    padding-left: 2rem;
+}
+
