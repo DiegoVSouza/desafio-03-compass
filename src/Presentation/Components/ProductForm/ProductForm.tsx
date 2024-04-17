@@ -15,11 +15,11 @@ import { FiEdit2 } from "react-icons/fi";
 import { TfiTrash } from "react-icons/tfi";
 import StoreModel from '../../../main/hooks/UserModel';
 import Notification from '../Notification/Notification';
-import InputComponent from '../Input/InputComponent';
+import InputComponent from '../Inputs/InputComponent';
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import CheckboxComponent from '../Input/CheckBoxComponent';
+import CheckboxComponent from '../Inputs/CheckBoxComponent';
 import { Product, ProductPost } from '../../../Domain/Model/Product';
 
 interface ProductFormInterface {

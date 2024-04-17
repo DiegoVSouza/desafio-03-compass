@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Product, ProductGet, ProductPost, ProductPut } from "../../Domain/Model/Product";
 import { ProductRepositoryImpl } from "../../Data/Repository/ProductRepositoryImpl";
 import { GetProducts } from "../../Domain/UseCase/Product/GetProducts";
@@ -22,19 +22,19 @@ export default function ProductModel() {
   async function getProducts(params?: ProductGet) {
     setProducts(await getProductsUseCase.invoke(params));
   }
-  async function postProducts(data:ProductPost) {
+  async function postProducts(data: ProductPost) {
     setProduct(await postProductsUseCase.invoke(data));
   }
-  async function putProducts(data:ProductPut) {
+  async function putProducts(data: ProductPut) {
     setProduct(await putProductsUseCase.invoke(data));
   }
-  async function deleteProducts(id:string) {
+  async function deleteProducts(id: string) {
     setProduct(await deleteProductsUseCase.invoke(id));
     await getProducts()
   }
 
   function onChangeValue(id: String) {
-    let Product = Products.find(item=> item.id === id)
+    let Product = Products.find(item => item.id === id)
     setProduct(Product);
   }
 
