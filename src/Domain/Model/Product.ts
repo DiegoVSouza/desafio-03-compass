@@ -22,6 +22,9 @@ export interface Product {
 export interface ProductGet{
   [key: string]: string | number | undefined;
   id?: string;
+  name?: string;
+  categoryId?: string;
+  price?: number;
   limit?: number;
 }
 
