@@ -22,7 +22,7 @@ export default function Header() {
                 </Flex>
                 <Flex gap='1rem' >
                     <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => history('/home/')}>Home</Button></ListItem>
-                    <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => history('/shop/')}>Shop</Button></ListItem>
+                    <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => history('/home/shop/')}>Shop</Button></ListItem>
                     <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => history('/about/')}>About</Button></ListItem>
                     <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => history('/contact/')}>Contact</Button></ListItem>
                 </Flex>
