@@ -1,7 +1,7 @@
 import { ProductGet, ProductPost, ProductPut } from "../../Domain/Model/Product";
 import { api } from "../Services/api";
 import ProductDataSource from "../DataSource/ProductDataSource";
-import { ProductAPIEntity } from "../Entity/ProductAPIEntity";
+import { ProductAPIEntity, ProductPagAPIEntity } from "../Entity/ProductAPIEntity";
 
 
 export default class ProductAPIDataSourceImpl implements ProductDataSource {
@@ -26,12 +26,40 @@ export default class ProductAPIDataSourceImpl implements ProductDataSource {
         }
       }
 
-      console.log(">>>>>>>>>", url)
       const { data } = await api.get(url);
       return data;
     } catch (error: any) {
       console.log(error);
       return [] as ProductAPIEntity[];
+    }
+  }
+
+  async getProductsPag(params?: ProductGet): Promise<ProductPagAPIEntity> {
+    try {
+      let url = '/api/v1/product';
+      let isFirstParam = true;
+
+      if (params) {
+        for (const key in params) {
+          if (Object.prototype.hasOwnProperty.call(params, key)) {
+            const value = params[key];
+            if (value !== undefined && value !== null) {
+              if (isFirstParam) {
+                url += `?${key}=${value}`;
+                isFirstParam = false;
+              } else {
+                url += `&${key}=${value}`;
+              }
+            }
+          }
+        }
+      }
+
+      const { data } = await api.get(url);
+      return data;
+    } catch (error: any) {
+      console.log(error);
+      return {} as ProductPagAPIEntity;
     }
   }
 

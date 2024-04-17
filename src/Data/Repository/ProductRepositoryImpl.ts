@@ -12,6 +12,9 @@ export class ProductRepositoryImpl implements ProductRepository {
   async getProducts(params?: ProductGet) {
     return this.dataSource.getProducts(params);
   }
+  async getProductsPag(params?: ProductGet) {
+    return this.dataSource.getProductsPag(params);
+  }
   async postProducts(data:ProductPost) {
     return this.dataSource.postProducts(data);
   }

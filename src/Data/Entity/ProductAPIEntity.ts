@@ -18,3 +18,10 @@ export interface ProductAPIEntity {
   created_date: Date;
   updated_date: Date;
 }
+
+
+export interface ProductPagAPIEntity {
+  products: ProductAPIEntity[];
+  number_of_pages: number;
+  page: number;
+}
