@@ -1,0 +1,16 @@
+.category {
+    cursor: pointer;
+    z-index: 2;
+}
+
+.category img {
+    transition: width 500ms ease-in-out, height 500ms ease-in-out, box-shadow 500ms ease-in-out;
+}
+
+.category img:hover {
+    width: 101%;
+    height: 31rem;
+    -webkit-box-shadow: -10px 10px 37px -4px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: -10px 10px 37px -4px rgba(0, 0, 0, 0.54);
+    box-shadow: -10px 10px 37px -4px rgba(0, 0, 0, 0.54);
+}
