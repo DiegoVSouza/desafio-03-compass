@@ -6,23 +6,25 @@ import { CategoryAPIEntity } from "../Entity/CategoryAPIEntity";
 export default class CategoryAPIDataSourceImpl implements CategoryDataSource {
   async getCategorys(params: CategoryGet): Promise<CategoryAPIEntity[]> {
     try {
-      let url = '/api/v1/category'; 
-      let isFirstParam = true; 
-      
-      if(params){
+      let url = '/api/v1/category';
+      let isFirstParam = true;
+
+      if (params) {
         for (const key in params) {
           if (Object.prototype.hasOwnProperty.call(params, key)) {
             const value = params[key];
-            if (isFirstParam) {
-              url += `?${key}=${value}`;
-              isFirstParam = false;
-            } else {
-              url += `&${key}=${value}`;
+            if (value !== undefined && value !== null) {
+              if (isFirstParam) {
+                url += `?${key}=${value}`;
+                isFirstParam = false;
+              } else {
+                url += `&${key}=${value}`;
+              }
             }
           }
         }
       }
-  
+
       const { data } = await api.get(url);
       return data;
     } catch (error: any) {
@@ -30,7 +32,7 @@ export default class CategoryAPIDataSourceImpl implements CategoryDataSource {
       return [] as CategoryAPIEntity[];
     }
   }
-  
+
 
   async postCategorys(postData: CategoryPost): Promise<CategoryAPIEntity> {
     try {
@@ -50,7 +52,7 @@ export default class CategoryAPIDataSourceImpl implements CategoryDataSource {
       return {} as CategoryAPIEntity;
     }
   }
-  async deleteCategorys(categoryId:string): Promise<CategoryAPIEntity> {
+  async deleteCategorys(categoryId: string): Promise<CategoryAPIEntity> {
     try {
       const { data } = await api.delete(`/api/v1/category/${categoryId}`)
       return data;

@@ -14,15 +14,19 @@ export default class ProductAPIDataSourceImpl implements ProductDataSource {
         for (const key in params) {
           if (Object.prototype.hasOwnProperty.call(params, key)) {
             const value = params[key];
-            if (isFirstParam) {
-              url += `?${key}=${value}`;
-              isFirstParam = false;
-            } else {
-              url += `&${key}=${value}`;
+            if (value !== undefined && value !== null) {
+              if (isFirstParam) {
+                url += `?${key}=${value}`;
+                isFirstParam = false;
+              } else {
+                url += `&${key}=${value}`;
+              }
             }
           }
         }
       }
+
+      console.log(">>>>>>>>>", url)
       const { data } = await api.get(url);
       return data;
     } catch (error: any) {
