@@ -5,6 +5,7 @@ import Admin from "../../Components/Admin/Admin";
 import Footer from "../../Components/Footer/Footer";
 import { Box, Image, Text } from "@chakra-ui/react";
 import CategoryHolder from "../../Components/CategoryHolder/CategoryHolder";
+import ProductHolder from "../../Components/ProductHolder/ProductHolder";
 export default function HomeView() {
 
   return (
@@ -18,6 +19,7 @@ export default function HomeView() {
       </Box>
 
       <CategoryHolder title="Browse The Range" quantity={3}/>
+      <ProductHolder title='Our Products' limit={8} pagination={false}/>
     </main>
   );
 }
