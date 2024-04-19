@@ -19,13 +19,13 @@ root.render(
   <React.StrictMode>
     <ToastContainer />
     <IconContext.Provider value={{ className: 'react-icons' }}>
-    <Provider store={store}>
-    <ChakraProvider theme={theme}>
-      <BrowserRouter>
-        <Routers />
-      </BrowserRouter>
-      </ChakraProvider>
-    </Provider>
+      <Provider store={store}>
+        <ChakraProvider theme={theme}>
+          <BrowserRouter>
+            <Routers />
+          </BrowserRouter>
+        </ChakraProvider>
+      </Provider>
 
     </IconContext.Provider>
   </React.StrictMode>
