@@ -10,10 +10,15 @@ import { FaRegUser } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import CategoryModel from '../../../main/hooks/CategoryModel';
 
 export default function Header() {
     const history = useNavigate()
-
+    const { onChangeValue } = CategoryModel()
+    const goToStore = ()=>{
+        onChangeValue(undefined)
+        history('/home/shop/')
+    }
     const renderHeader = () => {
         if (IsMobile())
             return (<>
@@ -22,7 +27,7 @@ export default function Header() {
                 </Flex>
                 <Flex gap='1rem' >
                     <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => history('/home/')}>Home</Button></ListItem>
-                    <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => history('/home/shop/')}>Shop</Button></ListItem>
+                    <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => goToStore()}>Shop</Button></ListItem>
                     <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => history('/about/')}>About</Button></ListItem>
                     <ListItem><Button variant='link' fontSize='1.2rem' onClick={() => history('/contact/')}>Contact</Button></ListItem>
                 </Flex>
