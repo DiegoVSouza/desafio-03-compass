@@ -39,8 +39,10 @@ const productSchema = yup
     discount_price: yup.number().required('Digite um preço de desconto válido'),
     discount_percent: yup.number().required('Digite um percentual de desconto válido'),
     is_new: yup.boolean().required('Indique se o produto é novo ou não'),
+    sku: yup.string().required('Digite uma sku válido'),
     image_links: yup.array().of(yup.string().required()).required('Insira links das imagens'),
     colors: yup.array().of(yup.string().required()).required('Insira as cores disponíveis'),
+    sizes: yup.array().of(yup.string().required()).required('Insira os tamanhos disponíveis'),
   })
   .required();
 
