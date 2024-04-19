@@ -33,9 +33,13 @@ export default function CategoryModel() {
     await getCategorys()
   }
 
-  function onChangeValue(id: String) {
-    let Category = Categorys.find(item=> item.id === id)
-    setCategory(Category);
+  function onChangeValue(id: String | undefined) {
+    if(id){
+      let Category = Categorys.find(item=> item.id === id)
+      setCategory(Category);
+    }else{
+      setCategory(undefined);
+    }
   }
 
   return {
