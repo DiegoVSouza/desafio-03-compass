@@ -1,4 +1,16 @@
-import { Box, Flex, Input, Select, Text } from "@chakra-ui/react";
+import {
+  Box, Flex, Input, Select, Text, useDisclosure, Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Button,
+  InputGroup,
+  Checkbox
+} from "@chakra-ui/react";
+
 import ProductModel from '../../../main/hooks/ProductModel';
 import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
@@ -10,6 +22,8 @@ import { BsSliders } from "react-icons/bs";
 import { HiViewGrid } from "react-icons/hi";
 import { BsViewList } from "react-icons/bs";
 import './ProductHolder.css'
+import CategoryModel from "../../../main/hooks/CategoryModel";
+import { CategorysMockUp } from "../CategoryHolder/mockedValues";
 
 interface ProductHolderInterface {
   title?: string;
@@ -20,26 +34,44 @@ interface ProductHolderInterface {
   limit: number;
 }
 
-export default function ProductHolder({ title, name, categoryId, price, pagination = false, limit = 8 }: ProductHolderInterface) {
+export default function ProductHolder({ title, name, price, categoryId, pagination = false, limit = 8 }: ProductHolderInterface) {
   const [showQuant, setShowQuant] = useState(limit)
   const [showQuantPag, setShowQuantPag] = useState(16)
   const [sortedBy, setSortedBy] = useState('name')
   const [isLoading, setIsLoading] = useState(true)
   const [actualPage, setActualPage] = useState(1)
+  const [actualCategoryId, setActualCategoryId] = useState(categoryId)
+  const [waitCategoryId, setWaitCategoryId] = useState(categoryId)
+  const [withDiscount, setWithDiscount] = useState(false)
+  const [isNew, setIsNew] = useState(false)
+
+  const { Categorys } = CategoryModel()
+
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   const { getProducts, Products, getProductsPag, ProductsPag } = ProductModel()
 
   useEffect(() => {
     if (pagination) {
-      getProductsPag({ name, categoryId, price, limit: showQuantPag, page: actualPage, sorted_by: sortedBy}).then(() => {
+      getProductsPag({ name, categoryId: actualCategoryId,
+         price, limit: showQuantPag, 
+         page: actualPage, sorted_by: sortedBy, 
+         discount: withDiscount ? true : undefined, new: isNew ? true : undefined }).then(() => {
         setIsLoading(false)
       })
     } else {
-      getProducts({ name, categoryId, price, limit: 24 }).then(() => {
+      getProducts({ name, categoryId, price, limit: limit * 3, discount: withDiscount ? true : undefined, new: isNew ? true : undefined }).then(() => {
         setIsLoading(false)
       })
     }
   }, [])
+
+  
+  useEffect(() => {
+    getProductsPag({ name, categoryId: actualCategoryId, price, limit: showQuantPag, page: actualPage, sorted_by: sortedBy, discount: withDiscount ? true : undefined, new: isNew ? true : undefined})
+  }, [showQuantPag, sortedBy])
+
 
   const showMore = () => {
     let newLimit = showQuant + limit
@@ -48,51 +80,93 @@ export default function ProductHolder({ title, name, categoryId, price, paginati
 
   const goToPage = (page: number) => {
     setIsLoading(true)
-    getProducts({ name, categoryId, price, limit: showQuantPag, page: page }).then(() => {
+    getProducts({ name, categoryId: actualCategoryId, price, limit: showQuantPag, page: page, discount: withDiscount ? true : undefined, new: isNew ? true : undefined }).then(() => {
       setIsLoading(false)
     })
     setActualPage(page)
   }
 
-  useEffect(()=>{
-    getProductsPag({ name, categoryId, price, limit: showQuantPag, page: actualPage, sorted_by: sortedBy })
-  },[showQuantPag,sortedBy])
+  const saveFilter = ()=>{
+    setActualCategoryId(waitCategoryId)
+      setIsLoading(true)
+      getProductsPag({ name, categoryId: waitCategoryId, price, limit: showQuantPag, page: actualPage, sorted_by: sortedBy, discount: withDiscount ? true : undefined, new: isNew ? true : undefined}).then(() => {
+      setIsLoading(false)
+    })
+    onClose()
+  }
+
+  const handleSetWithDiscount = () => {
+    setWithDiscount(!withDiscount);
+  };
+
+  const handleSetIsNew = () => {
+    setIsNew(!isNew);
+  };
 
   return (
     <Box as='section' textAlign='center' >
+      <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Filtro</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+              <Text mb='1rem'>
+                Selecione a categoria
+              </Text>
+              <Select cursor='pointer' value={waitCategoryId} onChange={(e) => setWaitCategoryId(e.target.value)}>
+                <option value={undefined}>Todos as categorias</option>
+                {CategorysMockUp.map(item=>(
+                  <option value={item.id}>{item.name}</option>
+                ))}
+              </Select>
+
+              <Checkbox mt='1rem' isChecked={withDiscount} onChange={handleSetWithDiscount} >Somente com Desconto?</Checkbox>
+              <Checkbox mt='1rem' isChecked={isNew} onChange={handleSetIsNew} >Somente produtos novos?</Checkbox>
+          </ModalBody>
+
+          <ModalFooter gap='1rem'>
+            <ButtonComponent width='40%' full={true} onClick={()=>saveFilter()} labelName='Save' />
+            <Button variant='ghost' height='3rem' onClick={onClose}>Cancelar</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
       {isLoading ? <LoadingSpinner /> :
 
         <Box>
           {
             pagination ?
               <>
-                <Flex id="filter-menu" padding='1.5rem 6.3rem' alignItems='center' justifyContent='space-between'>
-                  <Flex className='icon-holder' gap='0.75rem' alignItems='center'>
-                    <BsSliders size='1.5rem' style={{ transform: 'scaleX(-1)' }} />
-                    <Text fontSize='1.25rem'>Filter</Text>
+                <Flex id="filter-menu" padding={['1rem 2rem', '1rem 2rem', '1rem 3rem', '1.5rem 6.25rem', '1.5rem 6.25rem']} flexWrap='wrap' alignItems='center' justifyContent='space-between'>
+                  <Flex className='icon-holder' gap={['2rem', '2rem','2rem', '0.75rem', '0.75rem']} flexWrap='wrap' alignItems='center'>
+                    <BsSliders size='1.5rem' onClick={onOpen} style={{ transform: 'scaleX(-1)' }} />
+                    <Text fontSize='1.25rem' onClick={onOpen}>Filter</Text>
                     <HiViewGrid size='1.5rem' />
                     <BsViewList size='1.5rem' />
-                    <Text id="number-resume" fontSize='1rem' ml='2rem' fontWeight='400'>
+                    {actualCategoryId && <Text id="number-resume" fontSize='1rem' ml={['0', '0','2rem', '2rem', '2rem']} fontWeight='400'>
+                      Showing products of category {CategorysMockUp.find(item=>item.id === actualCategoryId)?.name}
+                    </Text>}
+                    <Text id="number-resume" fontSize='1rem' ml={['0', '0','2rem', '2rem', '2rem']} fontWeight='400'>
                       Showing {productsMockUpPag.page} of {productsMockUpPag.number_of_pages} pages
                     </Text>
                   </Flex>
-                  <Flex alignItems='center' gap='1rem'>
+                  <Flex alignItems='center' mt={['2rem', '2rem','2rem', '2rem', '0']} gap='1rem'>
                     <Text fontSize='1.25rem' fontWeight='400'>
                       Show
                     </Text>
                     <Input w='3.5rem' h='3.5rem' background='white' value={showQuantPag} onChange={(e) => setShowQuantPag(+e.target.value)} />
                     <Text fontSize='1.25rem' fontWeight='400'>
-                    Sorted by
+                      Sorted by
                     </Text>
                     <Select w='10rem' h='3.5rem' background='white' value={sortedBy} onChange={(e) => setSortedBy(e.target.value)}>
-                      <option value={'name'}>Name</option>
-                      <option value={'price'}>Price</option>
+                      <option value={'crescente'}>Crescente</option>
+                      <option value={'descrescente'}>Descrescente</option>
                     </Select>
                   </Flex>
                 </Flex>
                 <Box>
                   <Text fontSize='2.5rem' mb='2rem' fontWeight='bold' >{title}</Text>
-                  <Flex mb='2rem' flexWrap='wrap' justifyContent='center' padding={['0 1.5rem', '0 2rem', '0 3rem', '0 4rem', '0 6.3rem']} gap='2rem'>
+                  <Flex mb='2rem' flexWrap='wrap' justifyContent='center' padding={['0 1.5rem', '0 2rem', '0 3rem', '0 4rem', '0 6.25rem']} gap='2rem'>
                     {productsMockUpPag.products.map(item => (
                       <ProductCard key={item.id} product={item} />
                     ))}
@@ -104,7 +178,7 @@ export default function ProductHolder({ title, name, categoryId, price, paginati
               :
               <Box>
                 <Text fontSize='2.5rem' mb='2rem' fontWeight='bold' >{title}</Text>
-                <Flex mb='2rem' flexWrap='wrap' justifyContent='center' padding={['0 1.5rem', '0 2rem', '0 3rem', '0 4rem', '0 6.3rem']} gap='2rem'>
+                <Flex mb='2rem' flexWrap='wrap' justifyContent='center' padding={['0 1.5rem', '0 2rem', '0 3rem', '0 4rem', '0 6.25rem']} gap='2rem'>
                   {productsMockUp.slice(0, showQuant).map(item => (
                     <ProductCard key={item.id} product={item} />
                   ))}
