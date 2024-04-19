@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import { IoMdShare } from "react-icons/io";
 import { LuArrowLeftRight } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa6";
+import ProductModel from '../../../main/hooks/ProductModel';
+import formatCurrency from '../../../utils/FormatCurrency';
 
 interface ProductCardInterface {
     product: Product
@@ -14,9 +16,12 @@ interface ProductCardInterface {
 
 export default function ProductCard({ product }: ProductCardInterface) {
     const [isHover, setIsHover] = useState(false)
+    const { onChangeValue } = ProductModel()
     const history = useNavigate()
     const goToProductPage = () => {
-        history('/')
+        onChangeValue(product.id)
+
+        history(`/home/shop/${product.name.split(' ').join('-').toLocaleLowerCase()}`)
     }
     return (
         <Box textAlign='left' w='18rem' className='product-card' position='relative'
@@ -29,11 +34,11 @@ export default function ProductCard({ product }: ProductCardInterface) {
                 <Text cursor='pointer' className='text-secundary' fontSize='1rem' fontWeight='medium'>{product.category.name}</Text>
                 {product.discount_percent > 0 ?
                     <Flex gap='1rem'>
-                        <Text fontSize='1.25rem' fontWeight='bold'>R${product.discount_price}</Text>
-                        <Text fontSize='1.25rem' fontWeight='bold' color='#B0B0B0' textDecoration='line-through'>R${product.price}</Text>
+                        <Text fontSize='1.25rem' fontWeight='bold'>{formatCurrency(product.discount_price)}</Text>
+                        <Text fontSize='1.25rem' fontWeight='bold' color='#B0B0B0' textDecoration='line-through'>{formatCurrency(product.price)}</Text>
                     </Flex>
                     :
-                    <Text fontSize='1.25rem' fontWeight='bold'>R${product.price}</Text>
+                    <Text fontSize='1.25rem' fontWeight='bold'>{formatCurrency(product.price)}</Text>
                 }
             </Box>
 
