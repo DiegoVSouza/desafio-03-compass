@@ -5,20 +5,13 @@ import trophy from '../../assets/images/trophy 1.svg'
 export default function Footer() {
     return (
         <footer id="pagFooter">
-            {/* <Flex as='section'>
-                <Flex>
-                    <Image src={trophy}/>
-                    <Box>
-                    </Box>
-                    </Flex>
-            </Flex> */}
             <Flex as='section' flexWrap='wrap' gap='8.5rem' mb='3rem'>
                 <Flex direction='column'>
                     <Text fontSize='1.5rem' mb='3rem' fontWeight='bold'>Funiro.</Text>
                     <Text className="text-secundary">400 University Drive Suite 200 Coral Gables,
                         FL 33134 USA</Text>
                 </Flex>
-                <Flex direction='column' fontWeight='bold'>
+                <Flex direction='column' fontWeight='500'>
                     <Text className="text-secundary" mb='3rem'>Links</Text>
                     <Flex direction='column' className='footer-links' gap='2.8rem'>
                         <Text>Home</Text>
@@ -28,7 +21,7 @@ export default function Footer() {
                     </Flex>
                 </Flex>
 
-                <Flex direction='column' fontWeight='bold'>
+                <Flex direction='column' fontWeight='500'>
                     <Text className="text-secundary" mb='3rem'>Help</Text>
                     <Flex direction='column' className='footer-links' gap='2.8rem'>
                         <Text>Payment Options</Text>
@@ -36,7 +29,7 @@ export default function Footer() {
                         <Text>Privacy Policies</Text>
                     </Flex>
                 </Flex>
-                <Flex direction='column' fontWeight='bold'>
+                <Flex direction='column' fontWeight='500'>
                     <Text className="text-secundary" mb='3rem'>Newsletter</Text>
                     <Flex direction={['column','row','row','row','row']} alignItems={['flex-start','center','center','center','center']} justifyContent='flex-start'  gap='2.8rem'>
                        <Input variant='flushed' borderColor='black' placeholder="Enter Your Email Address" />
