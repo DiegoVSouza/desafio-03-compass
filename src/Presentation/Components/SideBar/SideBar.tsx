@@ -41,7 +41,7 @@ const Sidebar = () => {
                     <DrawerBody height='100%' display='flex' flexDirection='column' alignItems='center' justifyContent='space-between'>
                         <Flex w='100%' direction='column' gap='1rem' >
                             <Button variant='ghost' w="full" onClick={() => goTo('/home/')}>Home</Button>
-                            <Button variant='ghost' w="full" onClick={() => goTo('/shop/')}>Shop</Button>
+                            <Button variant='ghost' w="full" onClick={() => goTo('/home/shop/')}>Shop</Button>
                             <Button variant='ghost' w="full" onClick={() => goTo('/about/')}>About</Button>
                             <Button variant='ghost' w="full" onClick={() => goTo('/contact/')}>Contact</Button>
                         </Flex>
