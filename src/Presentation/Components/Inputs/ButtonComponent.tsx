@@ -21,7 +21,7 @@ export default function ButtonComponent({
     const { type: propType, size: propSize, ...restProps } = props;
 
     return (
-        <Button {...restProps} type={propType as PropsType}  size={String(propSize)} height='3rem' className={full ? 'full' : ''} background='white' >
+        <Button id='button-component' {...restProps} type={propType as PropsType}  size={String(propSize)} height='3rem' className={full ? 'full' : ''} background='white' >
             {labelName}
         </Button>
     );

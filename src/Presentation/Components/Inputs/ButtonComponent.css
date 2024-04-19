@@ -1,9 +1,15 @@
-button{
+#button-component{
     color: var(--secundary) !important;
-    background: white !important;
+    background-color: white !important;
     border-radius: 0 !important;
+    transition: background-color 200ms ease-in-out;
 }
 
 .full{
     border: solid 1px var(--secundary);
+}
+
+#button-component:hover{
+    background-color: var(--secundary) !important;
+    color: white !important;
 }
