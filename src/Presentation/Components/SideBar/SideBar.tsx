@@ -15,6 +15,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useNavigate } from 'react-router-dom';
 import ToggleColorButton from '../ToggleColorButton/ToggleColorButton';
 import logo from '../../assets/images/logo.svg'
+import CategoryModel from '../../../main/models/CategoryModel';
 
 const Sidebar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -22,6 +23,11 @@ const Sidebar = () => {
     const goTo = (url: string) => {
         history(url)
         onClose()
+    }
+    const { onChangeValue } = CategoryModel()
+    const goToStore = () => {
+        onChangeValue(undefined)
+        history('/home/shop/')
     }
     return (
         <>
@@ -41,7 +47,7 @@ const Sidebar = () => {
                     <DrawerBody height='100%' display='flex' flexDirection='column' alignItems='center' justifyContent='space-between'>
                         <Flex w='100%' direction='column' gap='1rem' >
                             <Button variant='ghost' w="full" onClick={() => goTo('/home/')}>Home</Button>
-                            <Button variant='ghost' w="full" onClick={() => goTo('/home/shop/')}>Shop</Button>
+                            <Button variant='ghost' w="full" onClick={() => goToStore()}>Shop</Button>
                             <Button variant='ghost' w="full" onClick={() => goTo('/about/')}>About</Button>
                             <Button variant='ghost' w="full" onClick={() => goTo('/contact/')}>Contact</Button>
                         </Flex>
