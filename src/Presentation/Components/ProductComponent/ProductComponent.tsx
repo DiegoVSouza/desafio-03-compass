@@ -2,7 +2,7 @@ import './ProductComponent.css'
 import { Box, Flex, Text, Image, Button, Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { FiEdit2 } from "react-icons/fi";
 import { Product } from '../../../Domain/Model/Product';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import formatCurrency from '../../../utils/FormatCurrency';
 import { FaStar, FaStarHalf } from "react-icons/fa6";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
@@ -14,11 +14,52 @@ interface ProductComponentInterface {
 }
 
 export default function ProductComponent({ product }: ProductComponentInterface) {
-  let sizes = product.attributes.map(item => item.size)
-  let colors = product.attributes.map(item => item.color)
+  const sizes = product.attributes.map(item => item.size)
+  const colors = product.attributes.map(item => item.color)
+
+  const [sizesArray, setSizesArray] = useState(sizes)
+  const [colorsArray, setColorsArray] = useState(colors)
   const [featureImage, setFeatureImage] = useState(product.image_links[0])
-  const [currentSize, setCurrentSize] = useState(sizes[0])
-  const [currentColor, setCurrentColor] = useState(colors[0])
+  const [currentSize, setCurrentSize] = useState('')
+  const [currentColor, setCurrentColor] = useState('')
+  const [currentAttributeId, setCurrentAttributeId] = useState('')
+
+
+
+  const handleSetCurrentSize = (size: string) => {
+    if (size === currentSize) {
+      setColorsArray(colors)
+      setCurrentSize('')
+    } else {
+      let newAttributesArray = product.attributes.filter(item => item.size === size)
+      let newColorArray = newAttributesArray.map(item => item.color)
+      setColorsArray(newColorArray)
+      setCurrentSize(size)
+    }
+  }
+
+  const handlesetCurrentColor = (color: string) => {
+    if (color === currentColor) {
+      setSizesArray(sizes)
+      setCurrentColor('')
+    } else {
+      let newAttributesArray = product.attributes.filter(item => item.color === color)
+      let newSizeArray = newAttributesArray.map(item => item.size)
+      setSizesArray(newSizeArray)
+      setCurrentColor(color)
+    }
+
+  }
+
+  useEffect(() => {
+    if (currentColor && currentSize) {
+      let newAttributeId = product.attributes.find(item => item.color === currentColor && item.size === currentSize)?.id
+      if (newAttributeId)
+        setCurrentAttributeId(newAttributeId)
+    }else{
+      setCurrentAttributeId('')
+    }
+  }, [currentColor, currentSize])
 
   function extractAdjectives(text: string): string[] {
     const doc = nlp(text);
@@ -31,7 +72,7 @@ export default function ProductComponent({ product }: ProductComponentInterface)
 
   return (
     <Box id="product" as='section' mt='2rem' mb='5.6rem'>
-      <Flex flexWrap='wrap' gap='3rem'  padding={['0 1.5rem', '0 2rem', '0 3rem', '0 4rem', '0 6.25rem']} >
+      <Flex flexWrap='wrap' gap='3rem' padding={['0 1.5rem', '0 2rem', '0 3rem', '0 4rem', '0 6.25rem']} >
         <Flex borderRadius='10px'>
           <Flex direction='column' gap='2rem' mr='2rem'>
             {product.image_links.map((item, index) => (
@@ -64,9 +105,9 @@ export default function ProductComponent({ product }: ProductComponentInterface)
           <Text fontWeight='400' size='13px' mt='1.1rem'>{product.description}</Text>
           <Text mt='1.4rem' className='text-secundary' fontSize='14px' fontWeight='400'>Size</Text>
           <Flex mt='12px' gap='1rem'>
-            {sizes.map((item, index) => (
+            {sizesArray.map((item, index) => (
               <Button id="button-size" borderRadius='5px' className={currentSize === item ? 'active-size' : ''} value={currentSize}
-                onClick={() => setCurrentSize(item)} w='1.875rem' h='2.5rem' key={index} >
+                onClick={() => handleSetCurrentSize(item)} w='1.875rem' h='2.5rem' key={index} >
                 {item.toUpperCase()}
               </Button>
             ))}
@@ -74,13 +115,13 @@ export default function ProductComponent({ product }: ProductComponentInterface)
 
           <Text mt='1.4rem' className='text-secundary' fontSize='14px' fontWeight='400'>Color</Text>
           <Flex mt='12px' gap='1rem'>
-            {colors.map((item, index) => (
+            {colorsArray.map((item, index) => (
               <Button borderRadius='2rem' w='1.875rem' h='2.5rem' border={item.toLowerCase() === 'white' ? 'solid 1px black' : 'none'} className={currentColor === item ? 'active-color' : ''} value={currentSize}
-                onClick={() => setCurrentColor(item)} key={index} backgroundColor={item.toLowerCase()}>
+                onClick={() => handlesetCurrentColor(item)} key={index} backgroundColor={item.toLowerCase()}>
               </Button>
             ))}
           </Flex>
-          <AddShopCar />
+          <AddShopCar id={currentAttributeId} color={currentColor} size={currentSize} />
           <Box id='definitions' mt='3.75rem' pt='3.75rem' >
             <Flex>
               <Text w='5.5rem' className='text-secundary' fontSize='1rem'> SKU</Text>
@@ -109,11 +150,11 @@ export default function ProductComponent({ product }: ProductComponentInterface)
           </Box>
         </Box>
       </Flex>
-      
-      <Tabs  id='tabs-product' variant='unstyled' w='100%'>
+
+      <Tabs id='tabs-product' variant='unstyled' w='100%'>
         <TabList w='100%' justifyContent='center'>
-          <Tab _selected={{ fontWeight: 'Bold', color: 'black'}} fontSize='1.5rem'>Description</Tab>
-          <Tab _selected={{ fontWeight: 'Bold', color: 'black'}}  fontSize='1.5rem'>Additional Information</Tab>
+          <Tab _selected={{ fontWeight: 'Bold', color: 'black' }} fontSize='1.5rem'>Description</Tab>
+          <Tab _selected={{ fontWeight: 'Bold', color: 'black' }} fontSize='1.5rem'>Additional Information</Tab>
         </TabList>
         <TabPanels padding={['0 0.2rem', '0 4rem', '0 5rem', '0 10rem', '0 13.25rem']}>
           <TabPanel>
