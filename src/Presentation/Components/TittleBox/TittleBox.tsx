@@ -3,6 +3,7 @@ import './TittleBox.css'
 import { Text, Flex, Image, Box } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
 import bigger from '../../assets/images/bigger than.svg'
+import { upperCaseFirstLetter } from "../../../utils/TextUltis";
 
 interface TittleBoxInterface {
     isProduct?: boolean;
@@ -13,10 +14,7 @@ export default function TittleBox({ isProduct = false }: TittleBoxInterface) {
     const history = useNavigate()
     const pathSegments = location.pathname.split('/').filter(segment => segment !== '');
     let lastNumber = pathSegments.length - 1
-    const upperCaseFirstLetter = (string: string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
+  
     const calculateUrl = (index: number)=>{
         let url = "/" + pathSegments.slice(0,index + 1).join('/')
         history(url)

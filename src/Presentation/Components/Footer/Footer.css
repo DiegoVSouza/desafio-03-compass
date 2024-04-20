@@ -5,10 +5,6 @@
     border-top: solid 1px var(--gray-04);
 }
 
-.text-secundary{
-    font-size: 1rem;
-    color: var(--gray-03);
-}
 
 .footer-links p{
     cursor: pointer;
