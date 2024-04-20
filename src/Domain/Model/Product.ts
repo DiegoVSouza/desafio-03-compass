@@ -21,11 +21,24 @@ export interface Product {
 
 }
 
-interface Attributes {
+export interface Attributes {
   id: string
   color: string;
   qtd: number;
   size: string;
+}
+
+export interface AttributesPost {
+  color: string;
+  qtd: number;
+  size: string;
+}
+
+export interface AttributesPut {
+  id: string
+  color?: string;
+  qtd?: number;
+  size?: string;
 }
 
 export interface ProductPag {
@@ -49,33 +62,34 @@ export interface ProductGet {
 }
 
 export interface ProductPost {
-  name: string;
-  categoryId: string;
+  name: string
+  categoryId: string
   description: string;
   large_description: string;
   price: number;
   discount_price: number;
   discount_percent: number;
-  is_new: boolean;
   sku: string;
   image_links: string[];
-  colors: string[]
-  sizes: string[]
+  attributes: AttributesPost[];
+
+  is_new: boolean;
+
 }
 
 export interface ProductPut {
   id: string;
-  name?: string;
-  categoryId?: string;
+  name?: string
+  categoryId?: string
   description?: string;
   large_description?: string;
   price?: number;
   discount_price?: number;
   discount_percent?: number;
-  is_new?: boolean;
   sku?: string;
   image_links?: string[];
-  colors?: string[]
-  sizes?: string[]
+  attributes?: AttributesPut[];
+
+  is_new?: boolean;
 }
 
