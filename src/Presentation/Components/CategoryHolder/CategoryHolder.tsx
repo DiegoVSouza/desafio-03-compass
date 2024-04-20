@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import CategoryModel from '../../../main/hooks/CategoryModel';
+import CategoryModel from '../../../main/models/CategoryModel';
 import './CategoryHolder.css'
 import { Box, Text, Image, Flex } from '@chakra-ui/react';
 import LoadingSpinner from '../Notification/LoadingSpinner';
