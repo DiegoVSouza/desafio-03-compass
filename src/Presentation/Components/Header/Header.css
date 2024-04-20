@@ -32,7 +32,11 @@ li {
     color: var(--secundary);
 }
 
-div>li>button {
+.popover{
+    border: solid 1px var(--secundary) !important;
+}
+
+.popover button{
     text-align: center;
     text-decoration: none !important;
     background: none;
@@ -40,7 +44,20 @@ div>li>button {
     padding: 0.5rem 1rem !important;
 }
 
-div>li>button:hover {
+.popover button:hover {
+    background: var(--gray-02);
+    color: var(--secundary) !important;
+}
+
+#header-ul button {
+    text-align: center;
+    text-decoration: none !important;
+    background: none;
+    color: black !important;
+    padding: 0.5rem 1rem !important;
+}
+
+#header-ul button:hover {
     background: var(--gray-02);
     color: var(--secundary) !important;
 }
@@ -69,7 +86,7 @@ a {
         gap: 0 1rem;
     }
 
-    div>li>button {
+    #header-ul button {
         padding: 0.5rem !important;
         font-size: 1rem !important;
     }
