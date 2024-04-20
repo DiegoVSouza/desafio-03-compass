@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { FiEdit2 } from "react-icons/fi";
 import { TfiTrash } from "react-icons/tfi";
-import StoreModel from '../../../main/hooks/UserModel';
+import StoreModel from '../../../main/models/UserModel';
 import Notification from '../Notification/Notification';
 import InputComponent from '../Inputs/InputComponent';
 import * as yup from "yup";
@@ -29,22 +29,24 @@ interface ProductFormInterface {
   edit: boolean;
 }
 
-const productSchema = yup
-  .object({
-    name: yup.string().required('Digite um nome válido'),
-    categoryId: yup.string().required('Digite uma categoria válida'),
-    description: yup.string().required('Digite uma descrição válida'),
-    large_description: yup.string().required('Digite uma descrição detalhada válida'),
-    price: yup.number().required('Digite um preço válido'),
-    discount_price: yup.number().required('Digite um preço de desconto válido'),
-    discount_percent: yup.number().required('Digite um percentual de desconto válido'),
-    is_new: yup.boolean().required('Indique se o produto é novo ou não'),
-    sku: yup.string().required('Digite uma sku válido'),
-    image_links: yup.array().of(yup.string().required()).required('Insira links das imagens'),
-    colors: yup.array().of(yup.string().required()).required('Insira as cores disponíveis'),
-    sizes: yup.array().of(yup.string().required()).required('Insira os tamanhos disponíveis'),
-  })
-  .required();
+const productSchema = yup.object({
+  name: yup.string().required('Digite um nome válido'),
+  categoryId: yup.string().required('Digite uma categoria válida'),
+  description: yup.string().required('Digite uma descrição válida'),
+  large_description: yup.string().required('Digite uma descrição detalhada válida'),
+  price: yup.number().required('Digite um preço válido'),
+  discount_price: yup.number().required('Digite um preço de desconto válido'),
+  discount_percent: yup.number().required('Digite um percentual de desconto válido'),
+  sku: yup.string().required('Digite uma SKU válida'),
+  image_links: yup.array().of(yup.string().required()).required('Insira links das imagens'),
+  attributes: yup.array().of(yup.object({
+    color: yup.string().required('Digite uma cor válida'),
+    qtd: yup.number().required('Digite uma quantidade válida'),
+    size: yup.string().required('Digite um tamanho válido'),
+  })).required('Insira os atributos'),
+  is_new: yup.boolean().required('Indique se o produto é novo ou não'),
+}).required();
+
 
 export default function ProductForm({ isOpen, onClose, onOpen, edit = false }: ProductFormInterface) {
 
