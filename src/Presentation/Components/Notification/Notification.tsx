@@ -1,4 +1,4 @@
-import Swal from "sweetalert2";
+import Swal, { SweetAlertIcon } from "sweetalert2";
 import './Notification.css'
 class Notification {
   success(message: string) {
@@ -49,14 +49,16 @@ class Notification {
     });
   }
 
-  async confirm(message: string, title: string = "Tem certeza?", nameButtonCancel: string = 'Cancelar', nameButtonConfirm: string = 'Avançar', obj: object = {}) {
+  async confirm(message: string, title: string = "Tem certeza?", 
+   nameButtonConfirm: string = 'Avançar', nameButtonCancel: string = 'Cancelar', confirmButtonColor:string = 'green', cancelButtonColor:string ='red', 
+   icon:SweetAlertIcon  = 'warning' ,obj: object = {}) {
     return await Swal.fire({
       title: title,
       text: message,
-      icon: 'warning',
+      icon: icon,
       showCancelButton: true,
-      cancelButtonColor: 'red',
-      confirmButtonColor: 'green',
+      cancelButtonColor: cancelButtonColor,
+      confirmButtonColor: confirmButtonColor,
       cancelButtonText: nameButtonCancel,
       confirmButtonText: nameButtonConfirm,
       ...obj,
