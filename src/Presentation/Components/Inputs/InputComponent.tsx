@@ -26,6 +26,7 @@ export default function InputComponent({
     return (
         <Box
             as="section"
+            mt='0.5rem'
             width={width ? width : 'auto'}
             className={
                 errors[inputName]
