@@ -1,29 +1,23 @@
 .loginForm {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.FormContainer {
-    background: var(--red-02);
-    height: calc(100vh - 10rem);
-    border-radius: 0.5rem;
+.form-container {
+  background: white;
+  height: 100vh;
 }
 
-.FormContainer>image {}
+.form-container>image {}
 
-.loginMain {
-    padding: 1rem 2rem;
+.change-login-register button {
+  text-decoration: none !important;
+  color: var(--secundary) !important;
 }
 
-@media only screen and (max-width: 600px) {
-    .loginMain {
-      padding: 0.5rem 1rem; 
-    }
-  }
-  
-  @media only screen and (min-width: 601px) and (max-width: 900px) {
-    .loginMain {
-      padding: 0.75rem 1.5rem; 
-    }
-  }
+
+
+@media only screen and (max-width: 600px) {}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {}
