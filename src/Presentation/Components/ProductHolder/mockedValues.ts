@@ -55,7 +55,7 @@ export const productsMockUp: Product[] = [
     attributes: [{
       id: '1',
       color:'white',
-      qtd: 1,
+      qtd: 10,
       size: 'X'
     },
     {
