@@ -20,7 +20,7 @@ export default function HomeView() {
       </Box>
 
       <CategoryHolder title="Browse The Range" quantity={3}/>
-      <ProductHolder title='Our Products' limit={8} pagination={false}/>
+      <ProductHolder discount={true} goDirectForShop={true} title='Our Products' limit={8} pagination={false}/>
       <Features />
     </main>
   );

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import './UserPage.css'
 import { Box } from "@chakra-ui/react";
-import UserModel from "../../../main/hooks/UserModel";
+import UserModel from "../../../main/models/UserModel";
 
 export default function UserPage() {
 

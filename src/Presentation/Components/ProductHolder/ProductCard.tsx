@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { IoMdShare } from "react-icons/io";
 import { LuArrowLeftRight } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa6";
-import ProductModel from '../../../main/hooks/ProductModel';
+import ProductModel from '../../../main/models/ProductModel';
 import formatCurrency from '../../../utils/FormatCurrency';
 
 interface ProductCardInterface {

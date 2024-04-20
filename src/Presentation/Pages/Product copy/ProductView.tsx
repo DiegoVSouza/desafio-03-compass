@@ -7,6 +7,9 @@ import TittleBox from '../../Components/TittleBox/TittleBox';
 import ProductComponent from '../../Components/ProductComponent/ProductComponent';
 import { productsMockUp } from '../../Components/ProductHolder/mockedValues';
 import ProductHolder from '../../Components/ProductHolder/ProductHolder';
+interface ProductComponentInterface {
+  product: Product
+}
 
 export default function ProductView() {
   const { Product } = ProductModel()
@@ -15,7 +18,7 @@ export default function ProductView() {
     <main>
       <TittleBox isProduct={true}/>
       {ProductMockUp && <ProductComponent product={ProductMockUp}/>}
-      <ProductHolder limit={4} categoryId={ProductMockUp?.category.id} pagination={false} title='Related Products'/>
+      <ProductHolder limit={4} categoryId={Product?.category.id} pagination={false} title='Related Products'/>
       <Box mb='4rem'></Box>
     </main>
   );
