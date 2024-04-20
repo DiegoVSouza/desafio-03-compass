@@ -12,3 +12,11 @@
     padding-left: 2rem;
 }
 
+#filter{
+    transition: scale 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+#filter:hover{
+    scale: 1.1;
+    color: var(--secundary);
+}
