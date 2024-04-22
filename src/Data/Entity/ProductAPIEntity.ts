@@ -11,7 +11,6 @@ export interface ProductAPIEntity {
   discount_price: number;
   discount_percent: number;
   sku: string;
-  image_links: string[];
   attributesId: string;
   attributes: Attributes[];
   created_date: Date;
@@ -23,6 +22,7 @@ export interface ProductAPIEntity {
 
 interface Attributes {
   id: string
+  image_link: string;
   color: string;
   qtd: number;
   size: string;

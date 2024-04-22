@@ -11,7 +11,6 @@ export interface Product {
   discount_price: number;
   discount_percent: number;
   sku: string;
-  image_links: string[];
   attributesId: string;
   attributes: Attributes[];
   created_date: Date;
@@ -22,13 +21,15 @@ export interface Product {
 }
 
 export interface Attributes {
-  id: string
+  id: string;
+  image_link: string;
   color: string;
   qtd: number;
   size: string;
 }
 
 export interface AttributesPost {
+  image_link: string;
   color: string;
   qtd: number;
   size: string;
@@ -36,6 +37,7 @@ export interface AttributesPost {
 
 export interface AttributesPut {
   id: string
+  image_link?: string;
   color?: string;
   qtd?: number;
   size?: string;
@@ -70,7 +72,6 @@ export interface ProductPost {
   discount_price: number;
   discount_percent: number;
   sku: string;
-  image_links: string[];
   attributes: AttributesPost[];
 
   is_new: boolean;
@@ -87,7 +88,6 @@ export interface ProductPut {
   discount_price?: number;
   discount_percent?: number;
   sku?: string;
-  image_links?: string[];
   attributes?: AttributesPut[];
 
   is_new?: boolean;

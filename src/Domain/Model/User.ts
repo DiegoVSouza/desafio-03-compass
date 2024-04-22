@@ -29,26 +29,49 @@ interface Address {
   state: string
 }
 
+interface AddressPost {
+  zipCode: string
+  street: string
+  number: string
+  complement?: string
+  neighborhood: string
+  city: string
+  state: string
+}
+
+interface AddressPut {
+  id: string
+  zipCode?: string
+  street?: string
+  number?: string
+  complement?: string
+  neighborhood?: string
+  city?: string
+  state?: string
+}
+
 export interface UserPost {
-  name: string,
-  cpf: string,
-  sex: string,
-  birthday_date: string,
-  phone: string,
-  email: string,
-  password: string,
-  cep: string,
+  email: string;
+  password: string;
+  name: string
+  cpf: string
+  document: string
+  sex: string
+  birthdate: string
+  phone: number
+  address: AddressPost
 }
 
 export interface UserPut {
   id: string,
-  name?: string,
-  cpf?: string,
-  sex?: string,
-  birthday_date?: string,
-  phone?: string,
-  email?: string,
-  password?: string,
-  cep?: string,
+  email?: string;
+  password?: string;
+  name?: string
+  cpf?: string
+  document?: string
+  sex?: string
+  birthdate?: string
+  phone?: number
+  address?: AddressPut
 }
 
