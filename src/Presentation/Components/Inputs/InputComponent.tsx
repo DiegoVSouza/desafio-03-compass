@@ -1,7 +1,7 @@
 import { FieldErrors, useForm, UseFormRegister } from "react-hook-form";
 import { CgDanger } from "react-icons/cg";
 import { InputHTMLAttributes } from "react";
-import { Box, Flex, FormErrorMessage, FormLabel, Input, ResponsiveValue, Text, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, FormErrorMessage, FormLabel, Input, FormControl, Text, useColorMode } from "@chakra-ui/react";
 import './InputComponent.css'
 
 interface InputComponentProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -26,7 +26,7 @@ export default function InputComponent({
     return (
         <Box
             as="section"
-            mt='0.5rem'
+            m='1rem 0'
             width={width ? width : 'auto'}
             className={
                 errors[inputName]
@@ -34,25 +34,27 @@ export default function InputComponent({
                     : "inputComponent"
             }
         >
-            <FormLabel
-                color={colorMode === "light" ? "black !important" : "white !important"}
-                fontWeight={'bold'}
-            >
-                {labelName}
-            </FormLabel>
+            <FormControl variant="floating" id={inputName} isInvalid={errors[inputName]?.message ? true : false}>
 
-            <Input
-                {...restProps}
-                size={propSize ? String(propSize): undefined}
-                onInput={props.onInput}
-                {...register(`${inputName}`)}
-            />
+                <Input
+                placeholder=" "
+                    {...restProps}
+                    size={propSize ? String(propSize) : undefined}
+                    {...register(`${inputName}`)}
+                />
+                <FormLabel
+                    color={colorMode === "light" ? "black !important" : "white !important"}
+                    fontWeight={'bold'}
+                >
+                    {labelName}
+                </FormLabel>
 
-            {errors[inputName]?.message && (
-                <Flex w='100%' gap='0.5rem' alignItems='center'>
-               <CgDanger color="red" size={18} /> <Text>{errors[inputName]?.message as string}</Text> 
-                </Flex>
-            )}
+                {errors[inputName]?.message && (
+                    <Flex w='100%' gap='0.5rem' alignItems='center'>
+                        <CgDanger color="red" size={18} /> <Text color='red'>{errors[inputName]?.message as string}</Text>
+                    </Flex>
+                )}
+            </FormControl>
         </Box>
     );
 }
