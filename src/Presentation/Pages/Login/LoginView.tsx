@@ -18,7 +18,7 @@ const loginSchema = yup
     })
     .required();
 
-export default function LoginPage() {
+export default function LoginView() {
 
     const dispatch = useDispatch();
 
@@ -54,7 +54,7 @@ export default function LoginPage() {
                 <Flex className='form-container' direction='column' as='section' gap='1rem' w={['85%', '75%', '50%', '50%', '50%']}
                     justifyContent='center' zIndex={2} align='center' alignItems='flex-start' padding={['1rem 2rem', '1rem 2rem', '1rem 3rem', '1.5rem 6.25rem', '1.5rem 6.25rem']} >
 
-                    <Image onClick={()=>history('/home')} src={logo} w='10rem' mb='3rem' />
+                    <Image cursor='pointer' onClick={()=>history('/home')} src={logo} w='10rem' mb='3rem' />
                     <Text className='text-feature' fontSize='1rem' fontWeight='bold'>Entrar</Text>
                     <Text color='black' fontSize='2rem' mb='3rem' fontWeight='bold'>Entrar</Text>
                     <Text color='black' fontSize='1.25rem' fontWeight='500'>Log in to your account</Text>
@@ -65,7 +65,7 @@ export default function LoginPage() {
                             <InputComponent labelName='Login' inputName='email' register={register} errors={errors} />
                             <InputComponent labelName='Password' inputName='password' type='password' register={register} errors={errors} />
                             <Checkbox m='1rem 0'>Remember me</Checkbox>
-                            <ButtonComponent width='100%' full={true} labelName='Fazer login' />
+                            <ButtonComponent type='submit' width='100%' full={true} labelName='Login' />
                         </form>
                         <Flex className='change-login-register' alignItems='center' justifyContent='center' gap='0.5rem' mt='2rem'>
                             <Text>Dont have a account?</Text>
