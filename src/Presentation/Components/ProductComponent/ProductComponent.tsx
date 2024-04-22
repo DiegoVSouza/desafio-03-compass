@@ -14,12 +14,13 @@ interface ProductComponentInterface {
 }
 
 export default function ProductComponent({ product }: ProductComponentInterface) {
+  const imgs = product.attributes.map(item => item.image_link)
   const sizes = product.attributes.map(item => item.size)
   const colors = product.attributes.map(item => item.color)
 
   const [sizesArray, setSizesArray] = useState(sizes)
   const [colorsArray, setColorsArray] = useState(colors)
-  const [featureImage, setFeatureImage] = useState(product.image_links[0])
+  const [featureImage, setFeatureImage] = useState(product.attributes[0].image_link)
   const [currentSize, setCurrentSize] = useState('')
   const [currentColor, setCurrentColor] = useState('')
   const [currentAttributeId, setCurrentAttributeId] = useState('')
@@ -75,7 +76,7 @@ export default function ProductComponent({ product }: ProductComponentInterface)
       <Flex flexWrap='wrap' gap='3rem' padding={['0 1.5rem', '0 2rem', '0 3rem', '0 4rem', '0 6.25rem']} >
         <Flex borderRadius='10px'>
           <Flex direction='column' gap='2rem' mr='2rem'>
-            {product.image_links.map((item, index) => (
+            {imgs.map((item, index) => (
               <Image borderRadius='10px' key={index} cursor='pointer' w={['4rem', '4rem', '5rem', '5rem', '5rem']} h={['4rem', '4rem', '5rem', '5rem', '5rem']}
                 onClick={() => setFeatureImage(item)} src={item} />
             ))}

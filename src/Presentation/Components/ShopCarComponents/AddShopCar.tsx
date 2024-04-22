@@ -31,7 +31,7 @@ export default function AddShopCar({ id, color, size, qtd = 1, compact = false }
             let newProduct = {
                 id,
                 product_id: Product.id,
-                image_link: Product.image_links[0],
+                image_link: Product.attributes[0].image_link,
                 color,
                 size,
                 qtd: quantity,

@@ -28,7 +28,7 @@ export default function ProductCard({ product }: ProductCardInterface) {
             onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
             {product.discount_percent > 0 && <Box className='stamp discount' >-{product.discount_percent}%</Box>}
             {product.is_new && <Box className='stamp is-new' >New!</Box>}
-            <Image w='100%' height='19rem' src={product.image_links[0]} />
+            <Image w='100%' height='19rem' src={product.attributes[0].image_link} />
             <Box padding='1rem 0 2rem 1rem' gap='0.5rem'>
                 <Text cursor='pointer' fontSize='1.5rem' fontWeight='bold'>{product.name}</Text>
                 <Text cursor='pointer' className='text-secundary' fontSize='1rem' fontWeight='medium'>{product.category.name}</Text>

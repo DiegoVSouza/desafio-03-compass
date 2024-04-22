@@ -38,8 +38,8 @@ const productSchema = yup.object({
   discount_price: yup.number().required('Digite um preço de desconto válido'),
   discount_percent: yup.number().required('Digite um percentual de desconto válido'),
   sku: yup.string().required('Digite uma SKU válida'),
-  image_links: yup.array().of(yup.string().required()).required('Insira links das imagens'),
   attributes: yup.array().of(yup.object({
+    image_link: yup.string().required('Insira o link da imagem'),
     color: yup.string().required('Digite uma cor válida'),
     qtd: yup.number().required('Digite uma quantidade válida'),
     size: yup.string().required('Digite um tamanho válido'),
