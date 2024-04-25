@@ -15,17 +15,24 @@ interface ProductComponentInterface {
 
 export default function ProductComponent({ product }: ProductComponentInterface) {
   const imgs = product.attributes.map(item => item.image_link)
-  const sizes = product.attributes.map(item => item.size)
-  const colors = product.attributes.map(item => item.color)
-
-  const [sizesArray, setSizesArray] = useState(sizes)
-  const [colorsArray, setColorsArray] = useState(colors)
-  const [featureImage, setFeatureImage] = useState(product.attributes[0].image_link)
+  let sizesDuplicated = product.attributes.map(item => item.size)
+  let sizes = sizesDuplicated.filter((size, index) => sizesDuplicated.indexOf(size) === index);
+  let colorsDuplicated = product.attributes.map(item => item.color)
+  let colors = colorsDuplicated.filter((size, index) => colorsDuplicated.indexOf(size) === index);
+  
+  const [sizesArray, setSizesArray] = useState<string[]>([''])
+  const [colorsArray, setColorsArray] = useState<string[]>([''])
+  const [featureImage, setFeatureImage] = useState('')
   const [currentSize, setCurrentSize] = useState('')
   const [currentColor, setCurrentColor] = useState('')
   const [currentAttributeId, setCurrentAttributeId] = useState('')
 
-
+  useEffect(() => {
+    
+    setFeatureImage(product.attributes[0].image_link)
+    setSizesArray(sizes)
+    setColorsArray(colors)
+  }, [product])
 
   const handleSetCurrentSize = (size: string) => {
     if (size === currentSize) {
@@ -57,7 +64,7 @@ export default function ProductComponent({ product }: ProductComponentInterface)
       let newAttributeId = product.attributes.find(item => item.color === currentColor && item.size === currentSize)?.id
       if (newAttributeId)
         setCurrentAttributeId(newAttributeId)
-    }else{
+    } else {
       setCurrentAttributeId('')
     }
   }, [currentColor, currentSize])

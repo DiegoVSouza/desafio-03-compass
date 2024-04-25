@@ -14,9 +14,9 @@ interface ProductModelContextProps {
   postProducts(data: ProductPost): Promise<void>
   putProducts(data: ProductPut): Promise<void>
   deleteProducts(id: string): Promise<void>
-  onChangeValue(id: string ): void
+  onChangeValue(id: string): void
   Products: Product[]
-  ProductsPag: Omit<ProductPag,'products'>
+  ProductsPag: Omit<ProductPag, 'products'>
   Product: Product | undefined
 }
 
@@ -28,7 +28,7 @@ const ProductModelContext = createContext({} as ProductModelContextProps);
 
 function ProductModelProvider({ children }: Props) {
   const [Products, setProducts] = useState<Product[]>([]);
-  const [ProductsPag, setProductsPag] = useState<Omit<ProductPag,'products'>>({} as Omit<ProductPag,'products'>);
+  const [ProductsPag, setProductsPag] = useState<Omit<ProductPag, 'products'>>({} as Omit<ProductPag, 'products'>);
   const [Product, setProduct] = useState<Product>();
 
   const productsDataSourceImpl = new ProductAPIDataSourceImpl();
@@ -45,7 +45,7 @@ function ProductModelProvider({ children }: Props) {
   }
   async function getProductsPag(params?: ProductGet) {
     let data = await getProductsPagUseCase.invoke(params)
-    const {products, ...restData} = data
+    const { products, ...restData } = data
     setProductsPag(restData);
     setProducts(products);
   }
@@ -61,8 +61,9 @@ function ProductModelProvider({ children }: Props) {
   }
 
   function onChangeValue(id: string) {
+    setProduct({} as Product)
     let Product = Products.find(item => item.id === id)
-    console.log(">>>>>.. no hook",Product)
+
     setProduct(Product);
   }
 
@@ -71,26 +72,26 @@ function ProductModelProvider({ children }: Props) {
   return (
     <ProductModelContext.Provider value={{
       getProducts,
-    getProductsPag,
-    postProducts,
-    putProducts,
-    deleteProducts,
-    onChangeValue,
-    Products,
-    ProductsPag,
-    Product
+      getProductsPag,
+      postProducts,
+      putProducts,
+      deleteProducts,
+      onChangeValue,
+      Products,
+      ProductsPag,
+      Product
     }}>
       {children}
     </ProductModelContext.Provider>
   );
-  
+
 }
 
 const ProductModel = (): ProductModelContextProps => {
   const context = useContext(ProductModelContext);
 
   if (!context) {
-      throw new Error("");
+    throw new Error("");
   }
 
   return context;

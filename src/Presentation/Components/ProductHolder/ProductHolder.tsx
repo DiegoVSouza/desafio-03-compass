@@ -39,7 +39,7 @@ interface ProductHolderInterface {
   limit: number;
 }
 
-export default function ProductHolder({ title, name, price, categoryId, discount = false, isnew = undefined, goDirectForShop = false, pagination = false, limit = 8 }: ProductHolderInterface) {
+export default function ProductHolder({ title, name, price, categoryId, discount = undefined, isnew = undefined, goDirectForShop = false, pagination = false, limit = 8 }: ProductHolderInterface) {
   const [showQuant, setShowQuant] = useState(limit)
   const [showQuantPag, setShowQuantPag] = useState(16)
   const [sortedBy, setSortedBy] = useState('asc')
@@ -63,7 +63,7 @@ export default function ProductHolder({ title, name, price, categoryId, discount
       name, category_id: actualCategoryId,
       price, limit: showQuantPag,
       page: actualPage, sorted_by: sortedBy,
-      discount: withDiscount ? true : undefined,
+      discount: withDiscount,
       is_new: isNew
     }
 
@@ -80,18 +80,27 @@ export default function ProductHolder({ title, name, price, categoryId, discount
     if (pagination) {
       handleGetProductPag()
     } else {
-      getProductsPag({ name, category_id: categoryId, price, limit: limit * 2, discount: withDiscount ? true : undefined, is_new: isNew }).then(() => {
+      getProductsPag({ name, category_id: categoryId, price, limit: limit * 2, discount: withDiscount, is_new: isNew }).then(() => {
         setIsLoading(false)
       })
     }
-    if (!Categorys)
+    if (Categorys.length < 1)
       getCategorys()
   }, [])
 
   let wait = true
 
   useEffect(() => {
-    getProductsPag({ name, category_id: categoryId, actualCategoryId, price, limit: showQuantPag, page: actualPage, sorted_by: sortedBy, discount: withDiscount ? true : undefined, is_new: isNew })
+    let params: ProductGet = {
+      name, category_id: actualCategoryId,
+      price, limit: showQuantPag,
+      page: actualPage, sorted_by: sortedBy,
+      discount: withDiscount,
+      is_new: isNew
+    }
+    getProductsPag(params).then(() => {
+      setIsLoading(false)
+    })
   }, [showQuantPag, sortedBy])
 
 
