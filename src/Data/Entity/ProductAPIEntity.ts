@@ -13,8 +13,8 @@ export interface ProductAPIEntity {
   sku: string;
   attributesId: string;
   attributes: Attributes[];
-  created_date: Date;
-  updated_date: Date;
+  created_at: Date;
+  updated_at: Date;
 
   is_new: boolean;
 
@@ -31,5 +31,5 @@ interface Attributes {
 export interface ProductPagAPIEntity {
   products: ProductAPIEntity[];
   number_of_pages: number;
-  page: number;
+  number_of_products: number;
 }

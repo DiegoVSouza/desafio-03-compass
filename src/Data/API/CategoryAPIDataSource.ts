@@ -6,7 +6,7 @@ import { CategoryAPIEntity } from "../Entity/CategoryAPIEntity";
 export default class CategoryAPIDataSourceImpl implements CategoryDataSource {
   async getCategorys(params: CategoryGet): Promise<CategoryAPIEntity[]> {
     try {
-      let url = '/api/v1/category';
+      let url = '/category';
       let isFirstParam = true;
 
       if (params) {
@@ -36,7 +36,7 @@ export default class CategoryAPIDataSourceImpl implements CategoryDataSource {
 
   async postCategorys(postData: CategoryPost): Promise<CategoryAPIEntity> {
     try {
-      const { data } = await api.post('/api/v1/category', postData)
+      const { data } = await api.post('/category', postData)
       return data;
     } catch (error: any) {
       console.log(error.response.data)
@@ -45,7 +45,7 @@ export default class CategoryAPIDataSourceImpl implements CategoryDataSource {
   }
   async putCategorys(putData: CategoryPut): Promise<CategoryAPIEntity> {
     try {
-      const { data } = await api.put(`/api/v1/category/${putData.id}`, putData)
+      const { data } = await api.put(`/category/${putData.id}`, putData)
       return data;
     } catch (error: any) {
       console.log(error.response.data)
@@ -54,7 +54,7 @@ export default class CategoryAPIDataSourceImpl implements CategoryDataSource {
   }
   async deleteCategorys(categoryId: string): Promise<CategoryAPIEntity> {
     try {
-      const { data } = await api.delete(`/api/v1/category/${categoryId}`)
+      const { data } = await api.delete(`/category/${categoryId}`)
       return data;
     } catch (error: any) {
       console.log(error.response.data)

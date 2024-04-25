@@ -7,7 +7,7 @@ import { ProductAPIEntity, ProductPagAPIEntity } from "../Entity/ProductAPIEntit
 export default class ProductAPIDataSourceImpl implements ProductDataSource {
   async getProducts(params?: ProductGet): Promise<ProductAPIEntity[]> {
     try {
-      let url = '/api/v1/product';
+      let url = '/product';
       let isFirstParam = true;
 
       if (params) {
@@ -36,7 +36,7 @@ export default class ProductAPIDataSourceImpl implements ProductDataSource {
 
   async getProductsPag(params?: ProductGet): Promise<ProductPagAPIEntity> {
     try {
-      let url = '/api/v1/product';
+      let url = '/product/pag';
       let isFirstParam = true;
 
       if (params) {
@@ -55,6 +55,8 @@ export default class ProductAPIDataSourceImpl implements ProductDataSource {
         }
       }
 
+      console.log('>>>>>>>>',params)
+
       const { data } = await api.get(url);
       return data;
     } catch (error: any) {
@@ -65,7 +67,7 @@ export default class ProductAPIDataSourceImpl implements ProductDataSource {
 
   async postProducts(postData: ProductPost): Promise<ProductAPIEntity> {
     try {
-      const { data } = await api.post('/api/v1/Product', postData)
+      const { data } = await api.post('/Product', postData)
       return data;
     } catch (error: any) {
       console.log(error.response.data)
@@ -74,7 +76,7 @@ export default class ProductAPIDataSourceImpl implements ProductDataSource {
   }
   async putProducts(putData: ProductPut): Promise<ProductAPIEntity> {
     try {
-      const { data } = await api.put(`/api/v1/Product/${putData.id}`, putData)
+      const { data } = await api.put(`/Product/${putData.id}`, putData)
       return data;
     } catch (error: any) {
       console.log(error.response.data)
@@ -83,7 +85,7 @@ export default class ProductAPIDataSourceImpl implements ProductDataSource {
   }
   async deleteProducts(ProductId: string): Promise<ProductAPIEntity> {
     try {
-      const { data } = await api.delete(`/api/v1/Product/${ProductId}`)
+      const { data } = await api.delete(`/Product/${ProductId}`)
       return data;
     } catch (error: any) {
       console.log(error.response.data)
