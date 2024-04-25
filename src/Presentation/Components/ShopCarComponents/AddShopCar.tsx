@@ -2,13 +2,12 @@ import { Flex, Button, Input, InputGroup, InputRightElement } from "@chakra-ui/r
 import { useEffect, useState } from "react";
 import './AddShopCar.css'
 import { FiPlus } from "react-icons/fi";
-import { IsMobile } from "../../../utils/IsMobile";
 import { useNavigate } from "react-router-dom";
 import Notification from "../Notification/Notification";
-import ProductModel from "../../../main/models/ProductModel";
 import { productsMockUp } from "../ProductHolder/mockedValues";
 import { FiTrash } from "react-icons/fi";
 import { useShopCar } from "../../../main/hooks/useShopCar";
+import { ProductModel } from "../../../main/hooks/useProductModel";
 
 interface AddShopCarInterface {
     id: string;
@@ -21,10 +20,11 @@ interface AddShopCarInterface {
 export default function AddShopCar({ id, color, size, qtd = 1, compact = false }: AddShopCarInterface) {
     const [quantity, setQuantity] = useState(compact ? qtd : 1);
     const { onAddProduct, onChangeShopCarProduct, onRemoveProduct } = useShopCar()
-    // const { Product }= ProductModel()
+    const { Product }= ProductModel()
+
     const history = useNavigate()
-    let Product = productsMockUp[1]
-    const currentQtd = Product.attributes.find(item => item.id === id)?.qtd
+
+    const currentQtd = Product?.attributes.find(item => item.id === id)?.qtd || 0
 
     const handleAddProduct = async () => {
         if (Product) {

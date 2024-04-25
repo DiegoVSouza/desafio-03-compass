@@ -15,7 +15,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useNavigate } from 'react-router-dom';
 import ToggleColorButton from '../ToggleColorButton/ToggleColorButton';
 import logo from '../../assets/images/logo.svg'
-import CategoryModel from '../../../main/models/CategoryModel';
+import { CategoryModel } from '../../../main/hooks/useCategoryModel';
 
 const Sidebar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();

@@ -22,7 +22,7 @@ import { FaRegUser } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import CategoryModel from '../../../main/models/CategoryModel';
+import { CategoryModel } from '../../../main/hooks/useCategoryModel';
 
 export default function Header() {
     const history = useNavigate()
@@ -48,18 +48,18 @@ export default function Header() {
 
                 <Flex justifyContent='space-between' alignItems='center' gap='2.5rem'>
                     <Popover
-                    placement='bottom'
-                   >
+                        placement='bottom'
+                    >
                         <PopoverTrigger>
                             <ListItem><FaRegUser className='headerSvg' /></ListItem>
                         </PopoverTrigger>
-                            <PopoverContent className='popover' w='100%'>
-                                <PopoverArrow />
-                                <PopoverBody>
-                                    <Button variant='link' onClick={()=>history('/register')}>Cadastre-se</Button>
-                                    <Button variant='link' onClick={()=>history('/login')}>Login</Button>
-                                </PopoverBody>
-                            </PopoverContent>
+                        <PopoverContent className='popover' w='100%'>
+                            <PopoverArrow />
+                            <PopoverBody>
+                                <Button variant='link' onClick={() => history('/register')}>Cadastre-se</Button>
+                                <Button variant='link' onClick={() => history('/login')}>Login</Button>
+                            </PopoverBody>
+                        </PopoverContent>
                     </Popover>
                     <ListItem><IoSearchSharp className='headerSvg' /></ListItem>
                     <ListItem><FaRegHeart className='headerSvg' /></ListItem>

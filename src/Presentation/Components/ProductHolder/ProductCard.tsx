@@ -7,8 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import { IoMdShare } from "react-icons/io";
 import { LuArrowLeftRight } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa6";
-import ProductModel from '../../../main/models/ProductModel';
 import formatCurrency from '../../../utils/FormatCurrency';
+import { ProductModel } from '../../../main/hooks/useProductModel';
 
 interface ProductCardInterface {
     product: Product
@@ -20,13 +20,12 @@ export default function ProductCard({ product }: ProductCardInterface) {
     const history = useNavigate()
     const goToProductPage = () => {
         onChangeValue(product.id)
-
         history(`/home/shop/${product.name.split(' ').join('-').toLocaleLowerCase()}`)
     }
     return (
         <Box textAlign='left' w='18rem' className='product-card' position='relative'
             onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
-            {product.discount_percent > 0 && <Box className='stamp discount' >-{product.discount_percent}%</Box>}
+            {product.discount_percent > 0 && <Box className='stamp discount' >-{Number(product.discount_percent).toFixed(0)}%</Box>}
             {product.is_new && <Box className='stamp is-new' >New!</Box>}
             <Image w='100%' height='19rem' src={product.attributes[0].image_link} />
             <Box padding='1rem 0 2rem 1rem' gap='0.5rem'>

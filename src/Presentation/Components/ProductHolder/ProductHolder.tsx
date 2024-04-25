@@ -11,7 +11,6 @@ import {
   Checkbox
 } from "@chakra-ui/react";
 
-import ProductModel from '../../../main/models/ProductModel';
 import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import LoadingSpinner from "../Notification/LoadingSpinner";
@@ -22,10 +21,11 @@ import { BsSliders } from "react-icons/bs";
 import { HiViewGrid } from "react-icons/hi";
 import { BsViewList } from "react-icons/bs";
 import './ProductHolder.css'
-import CategoryModel from "../../../main/models/CategoryModel";
 import { CategorysMockUp } from "../CategoryHolder/mockedValues";
 import { ProductGet } from "../../../Domain/Model/Product";
 import { useNavigate } from "react-router-dom";
+import { CategoryModel } from "../../../main/hooks/useCategoryModel";
+import { ProductModel } from "../../../main/hooks/useProductModel";
 
 interface ProductHolderInterface {
   title?: string;
@@ -39,10 +39,10 @@ interface ProductHolderInterface {
   limit: number;
 }
 
-export default function ProductHolder({ title, name, price, categoryId, discount= false, isnew = false, goDirectForShop = false,pagination = false, limit = 8 }: ProductHolderInterface) {
+export default function ProductHolder({ title, name, price, categoryId, discount = false, isnew = undefined, goDirectForShop = false, pagination = false, limit = 8 }: ProductHolderInterface) {
   const [showQuant, setShowQuant] = useState(limit)
   const [showQuantPag, setShowQuantPag] = useState(16)
-  const [sortedBy, setSortedBy] = useState('crescente')
+  const [sortedBy, setSortedBy] = useState('asc')
   const [isLoading, setIsLoading] = useState(true)
   const [actualPage, setActualPage] = useState(1)
   const [actualCategoryId, setActualCategoryId] = useState(categoryId)
@@ -52,18 +52,19 @@ export default function ProductHolder({ title, name, price, categoryId, discount
 
   const history = useNavigate()
 
-  const { Categorys, onChangeValue } = CategoryModel()
+  const { Categorys, getCategorys, onChangeValue } = CategoryModel()
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const { getProducts, Products, getProductsPag, ProductsPag } = ProductModel()
+  const { Products, getProductsPag, ProductsPag } = ProductModel()
 
   const handleGetProductPag = (key?: string, value?: string | number | boolean | undefined) => {
     let params: ProductGet = {
-      name, categoryId: actualCategoryId,
+      name, category_id: actualCategoryId,
       price, limit: showQuantPag,
       page: actualPage, sorted_by: sortedBy,
-      discount: withDiscount ? true : undefined, new: isNew ? true : undefined
+      discount: withDiscount ? true : undefined,
+      is_new: isNew
     }
 
     if (key)
@@ -79,23 +80,26 @@ export default function ProductHolder({ title, name, price, categoryId, discount
     if (pagination) {
       handleGetProductPag()
     } else {
-      getProducts({ name, categoryId, price, limit: limit * 2, discount: withDiscount ? true : undefined, new: isNew ? true : undefined }).then(() => {
+      getProductsPag({ name, category_id: categoryId, price, limit: limit * 2, discount: withDiscount ? true : undefined, is_new: isNew }).then(() => {
         setIsLoading(false)
       })
     }
+    if (!Categorys)
+      getCategorys()
   }, [])
 
+  let wait = true
 
   useEffect(() => {
-    getProductsPag({ name, categoryId: actualCategoryId, price, limit: showQuantPag, page: actualPage, sorted_by: sortedBy, discount: withDiscount ? true : undefined, new: isNew ? true : undefined })
+    getProductsPag({ name, category_id: categoryId, actualCategoryId, price, limit: showQuantPag, page: actualPage, sorted_by: sortedBy, discount: withDiscount ? true : undefined, is_new: isNew })
   }, [showQuantPag, sortedBy])
 
 
   const showMore = () => {
-    if(goDirectForShop){
+    if (goDirectForShop) {
       history('/home/shop')
     }
-    if(showQuant >= (limit * 2)){
+    if (showQuant >= (limit * 2)) {
       onChangeValue(actualCategoryId)
       history('/home/shop')
     }
@@ -110,7 +114,7 @@ export default function ProductHolder({ title, name, price, categoryId, discount
 
   const saveFilter = () => {
     setActualCategoryId(waitCategoryId)
-    handleGetProductPag('categoryId', waitCategoryId)
+    handleGetProductPag('category_id', waitCategoryId)
     onClose()
   }
 
@@ -131,17 +135,17 @@ export default function ProductHolder({ title, name, price, categoryId, discount
           <ModalCloseButton />
           <ModalBody>
             <Text mb='1rem'>
-              Selecione a categoria
+              Select category
             </Text>
             <Select cursor='pointer' value={waitCategoryId} onChange={(e) => setWaitCategoryId(e.target.value)}>
               <option value={undefined}>Todos as categorias</option>
-              {CategorysMockUp.map(item => (
+              {Categorys.map(item => (
                 <option value={item.id}>{item.name}</option>
               ))}
             </Select>
 
-            <Checkbox mt='1rem' isChecked={withDiscount} onChange={handleSetWithDiscount} >Somente com Desconto?</Checkbox>
-            <Checkbox mt='1rem' isChecked={isNew} onChange={handleSetIsNew} >Somente produtos novos?</Checkbox>
+            <Checkbox mt='1rem' w='100%' isChecked={withDiscount} onChange={handleSetWithDiscount} >Only with discount?</Checkbox>
+            <Checkbox mt='1rem' w='100%' isChecked={isNew} onChange={handleSetIsNew} >Only new products?</Checkbox>
           </ModalBody>
 
           <ModalFooter gap='1rem'>
@@ -165,10 +169,10 @@ export default function ProductHolder({ title, name, price, categoryId, discount
                     <HiViewGrid size='1.5rem' />
                     <BsViewList size='1.5rem' />
                     {actualCategoryId && <Text id="number-resume" fontSize='1rem' ml={['0', '0', '2rem', '2rem', '2rem']} fontWeight='400'>
-                      Showing products of category {CategorysMockUp.find(item => item.id === actualCategoryId)?.name}
+                      Showing products of category {Categorys.find(item => item.id === actualCategoryId)?.name}
                     </Text>}
                     <Text id="number-resume" fontSize='1rem' ml={['0', '0', '2rem', '2rem', '2rem']} fontWeight='400'>
-                      Showing {productsMockUpPag.page} of {productsMockUpPag.number_of_pages} pages
+                      Showing {Products?.length || 0} of {ProductsPag.number_of_products} products
                     </Text>
                   </Flex>
                   <Flex alignItems='center' mt={['2rem', '2rem', '2rem', '2rem', '0']} gap='1rem'>
@@ -180,19 +184,19 @@ export default function ProductHolder({ title, name, price, categoryId, discount
                       Sorted by
                     </Text>
                     <Select w='10rem' h='3.5rem' background='white' value={sortedBy} onChange={(e) => setSortedBy(e.target.value)}>
-                      <option value={'crescente'}>Crescente</option>
-                      <option value={'descrescente'}>Descrescente</option>
+                      <option value={'asc'}>Crescente</option>
+                      <option value={'dsc'}>Descrescente</option>
                     </Select>
                   </Flex>
                 </Flex>
                 <Box>
                   <Text fontSize='2.5rem' mb='2rem' fontWeight='bold' >{title}</Text>
                   <Flex mb='2rem' flexWrap='wrap' justifyContent='center' padding={['0 1.5rem', '0 2rem', '0 3rem', '0 4rem', '0 6.25rem']} gap='2rem'>
-                    {productsMockUpPag.products.map(item => (
+                    {Products && Products.map(item => (
                       <ProductCard key={item.id} product={item} />
                     ))}
                   </Flex>
-                  <Pagination actualPage={productsMockUpPag.page} numberOfpages={productsMockUpPag.number_of_pages} onClick={goToPage} />
+                  <Pagination actualPage={actualPage} numberOfpages={ProductsPag.number_of_pages} onClick={goToPage} />
                 </Box>
               </>
 
@@ -200,11 +204,11 @@ export default function ProductHolder({ title, name, price, categoryId, discount
               <Box>
                 <Text fontSize='2.5rem' mb='2rem' fontWeight='bold' >{title}</Text>
                 <Flex mb='2rem' flexWrap='wrap' justifyContent='center' padding={['0 1.5rem', '0 2rem', '0 3rem', '0 4rem', '0 6.25rem']} gap='2rem'>
-                  {productsMockUp.slice(0, showQuant).map(item => (
+                  {Products && Products.slice(0, showQuant).map(item => (
                     <ProductCard key={item.id} product={item} />
                   ))}
                 </Flex>
-                 <ButtonComponent full={true} width='16rem' labelName="Show More" onClick={() => showMore()} />
+                <ButtonComponent full={true} width='16rem' labelName="Show More" onClick={() => showMore()} />
               </Box>
           }
         </Box>

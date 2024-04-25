@@ -1,8 +1,4 @@
-import { useEffect } from "react";
 import './HomeView.css'
-import { TbBrandGithubFilled } from "react-icons/tb";
-import Admin from "../../Components/Admin/Admin";
-import Footer from "../../Components/Footer/Footer";
 import { Box, Image, Text } from "@chakra-ui/react";
 import CategoryHolder from "../../Components/CategoryHolder/CategoryHolder";
 import ProductHolder from "../../Components/ProductHolder/ProductHolder";
@@ -20,8 +16,8 @@ export default function HomeView() {
       </Box>
 
       <CategoryHolder title="Browse The Range" quantity={3}/>
-      <ProductHolder discount={true} goDirectForShop={true} title='Our Products' limit={8} pagination={false}/>
+      <ProductHolder discount={true} isnew={false} goDirectForShop={true} title='Our Products' limit={8} pagination={false}/>
       <Features />
     </main>
-  );
+  );  
 }
