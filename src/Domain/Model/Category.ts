@@ -3,8 +3,8 @@ export interface Category {
   name: string,
   image_link: string,
   description: string,
-  created_date: Date,
-  updated_date: Date,
+  created_at: Date,
+  updated_at: Date,
 }
 
 

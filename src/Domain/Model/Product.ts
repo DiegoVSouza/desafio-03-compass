@@ -13,9 +13,8 @@ export interface Product {
   sku: string;
   attributesId: string;
   attributes: Attributes[];
-  created_date: Date;
-  updated_date: Date;
-
+  created_at: Date;
+  updated_at: Date;
   is_new: boolean;
 
 }
@@ -46,18 +45,18 @@ export interface AttributesPut {
 export interface ProductPag {
   products: Product[];
   number_of_pages: number;
-  page: number;
+  number_of_products: number;
 }
 
 export interface ProductGet {
   [key: string]: string | number | boolean | undefined;
   id?: string;
   name?: string;
-  categoryId?: string;
+  category_id?: string;
   price?: number;
   page?: number;
   discount?: boolean;
-  new?: boolean;
+  is_new?: boolean;
   limit?: number;
   sku?: string;
   sorted_by?: string;

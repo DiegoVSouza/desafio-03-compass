@@ -10,8 +10,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 1",
       description: "Description of Category 1 ",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 1",
     large_description: "Large description of Product 1",
@@ -28,8 +28,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "2",
@@ -40,8 +40,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 2",
       description: "Description of Category 2 ",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 2 linda charmosa",
     large_description: "Large description of Product 2",
@@ -65,8 +65,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'XL'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "3",
@@ -77,8 +77,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 1",
       description: "Description of Category 1",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 3",
     large_description: "Large description of Product 3",
@@ -95,8 +95,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "4",
@@ -107,8 +107,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 3",
       description: "Description of Category 3",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 4",
     large_description: "Large description of Product 4",
@@ -125,8 +125,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "5",
@@ -137,8 +137,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 2",
       description: "Description of Category 2",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 5",
     large_description: "Large description of Product 5",
@@ -155,8 +155,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "6",
@@ -167,8 +167,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 1",
       description: "Description of Category 1",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 6",
     large_description: "Large description of Product 6",
@@ -185,8 +185,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "7",
@@ -197,8 +197,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 3",
       description: "Description of Category 3",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 7",
     large_description: "Large description of Product 7",
@@ -215,8 +215,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "8",
@@ -227,8 +227,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 2",
       description: "Description of Category 2",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 8",
     large_description: "Large description of Product 8",
@@ -245,8 +245,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "9",
@@ -257,8 +257,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 1",
       description: "Description of Category 1",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 9",
     large_description: "Large description of Product 9",
@@ -275,8 +275,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "10",
@@ -287,8 +287,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 3",
       description: "Description of Category 3",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 10",
     large_description: "Large description of Product 10",
@@ -305,8 +305,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "11",
@@ -317,8 +317,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 1",
       description: "Description of Category 1",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 1",
     large_description: "Large description of Product 1",
@@ -335,8 +335,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "12",
@@ -347,8 +347,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 2",
       description: "Description of Category 2",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 2",
     large_description: "Large description of Product 2",
@@ -365,8 +365,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "13",
@@ -377,8 +377,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 1",
       description: "Description of Category 1",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 3",
     large_description: "Large description of Product 3",
@@ -395,8 +395,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "14",
@@ -407,8 +407,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 3",
       description: "Description of Category 3",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 4",
     large_description: "Large description of Product 4",
@@ -425,8 +425,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "15",
@@ -437,8 +437,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 2",
       description: "Description of Category 2",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 5",
     large_description: "Large description of Product 5",
@@ -455,8 +455,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "16",
@@ -467,8 +467,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 1",
       description: "Description of Category 1",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 6",
     large_description: "Large description of Product 6",
@@ -485,8 +485,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "17",
@@ -497,8 +497,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 3",
       description: "Description of Category 3",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 7",
     large_description: "Large description of Product 7",
@@ -515,8 +515,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "18",
@@ -527,8 +527,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 2",
       description: "Description of Category 2",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 8",
     large_description: "Large description of Product 8",
@@ -545,8 +545,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "19",
@@ -557,8 +557,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 1",
       description: "Description of Category 1",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 9",
     large_description: "Large description of Product 9",
@@ -575,8 +575,8 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   },
   {
     id: "20",
@@ -587,8 +587,8 @@ export const productsMockUp: Product[] = [
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
       name: "Category 3",
       description: "Description of Category 3",
-      created_date: new Date(),
-      updated_date: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     },
     description: "Description of Product 10",
     large_description: "Large description of Product 10",
@@ -605,14 +605,14 @@ export const productsMockUp: Product[] = [
       qtd: 1,
       size: 'X'
     }],
-    created_date: new Date(),
-    updated_date: new Date()
+    created_at: new Date(),
+    updated_at: new Date()
   }
 ];
 
 export const productsMockUpPag: ProductPag = {
   products: productsMockUp.slice(0, 16),
   number_of_pages: 5,
-  page: 1
+  number_of_products: 100
 }
 
