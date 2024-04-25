@@ -16,7 +16,7 @@ html{
 }
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
   /* background: rgb(127, 3, 127);
   background: linear-gradient(0deg, rgba(127, 3, 127, 1) 0%, rgba(43, 0, 39, 1) 100%); */
   scroll-behavior: smooth;
