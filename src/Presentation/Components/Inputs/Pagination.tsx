@@ -20,7 +20,7 @@ export default function Pagination({
     if (actualPage > 1) {
       pages.push(
         <Button key="prev" onClick={() => onClick(actualPage - 1)}>
-          Previous
+          Prev
         </Button>
       );
     }
@@ -70,5 +70,5 @@ export default function Pagination({
     return pages;
   };
 
-  return <Flex id="pagination" w='100%' gap='2.3rem' justifyContent='center'>{renderPages()}</Flex>;
+  return <Flex id="pagination" w='100%' padding={['1rem', '0', '0', '0', '0']} gap={['1rem', '2.3rem', '2.3rem', '2.3rem', '2.3rem']}  justifyContent='center'>{renderPages()}</Flex>;
 }
