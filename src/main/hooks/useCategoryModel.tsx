@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { ReactNode, createContext, useContext, useEffect, useState } from "react";
 import { Category, CategoryGet, CategoryPost, CategoryPut } from "../../Domain/Model/Category";
 import { CategoryRepositoryImpl } from "../../Data/Repository/CategoryRepositoryImpl";
 import { GetCategorys } from "../../Domain/UseCase/Category/GetCategorys";
@@ -7,7 +7,23 @@ import { PutCategorys } from "../../Domain/UseCase/Category/PutCategorys";
 import { DeleteCategorys } from "../../Domain/UseCase/Category/DeleteCategorys";
 import CategoryAPIDataSourceImpl from "../../Data/API/CategoryAPIDataSource";
 
-export default function CategoryModel() {
+interface CategoryModelContextProps {
+  getCategorys(params?: CategoryGet): Promise<void>
+  postCategorys(data: CategoryPost): Promise<void>
+  putCategorys(data: CategoryPut): Promise<void>
+  deleteCategorys(id: string): Promise<void>
+  onChangeValue(id: String | undefined): void
+  Categorys: Category[]
+  Category: Category | undefined
+}
+
+interface Props {
+  children: ReactNode;
+}
+
+const CategoryModelContext = createContext({} as CategoryModelContextProps);
+
+function CategoryModelProvider({ children }: Props) {
   const [Categorys, setCategorys] = useState<Category[]>([]);
   const [Category, setCategory] = useState<Category>();
 
@@ -19,36 +35,56 @@ export default function CategoryModel() {
   const putCategorysUseCase = new PutCategorys(categorysRepositoryImpl);
   const deleteCategorysUseCase = new DeleteCategorys(categorysRepositoryImpl);
 
-  async function getCategorys(params?:CategoryGet) {
+  async function getCategorys(params?: CategoryGet) {
     setCategorys(await getCategorysUseCase.invoke(params));
   }
-  async function postCategorys(data:CategoryPost) {
+  async function postCategorys(data: CategoryPost) {
     setCategory(await postCategorysUseCase.invoke(data));
   }
-  async function putCategorys(data:CategoryPut) {
+  async function putCategorys(data: CategoryPut) {
     setCategory(await putCategorysUseCase.invoke(data));
   }
-  async function deleteCategorys(id:string) {
+  async function deleteCategorys(id: string) {
     setCategory(await deleteCategorysUseCase.invoke(id));
     await getCategorys()
   }
 
   function onChangeValue(id: String | undefined) {
-    if(id){
-      let Category = Categorys.find(item=> item.id === id)
+    if (id) {
+      let Category = Categorys.find(item => item.id === id)
       setCategory(Category);
-    }else{
+    } else {
       setCategory(undefined);
     }
   }
 
-  return {
-    getCategorys,
-    postCategorys,
-    putCategorys,
-    deleteCategorys,
-    onChangeValue,
-    Categorys,
-    Category
-  };
+
+  return (
+    <CategoryModelContext.Provider value={{
+      getCategorys,
+      postCategorys,
+      putCategorys,
+      deleteCategorys,
+      onChangeValue,
+      Categorys,
+      Category
+    }}>
+      {children}
+    </CategoryModelContext.Provider>
+  );
+  
 }
+
+
+const CategoryModel = (): CategoryModelContextProps => {
+  const context = useContext(CategoryModelContext);
+
+  if (!context) {
+      throw new Error("");
+  }
+
+  return context;
+};
+
+export { CategoryModel, CategoryModelProvider };
+
