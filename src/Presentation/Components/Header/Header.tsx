@@ -11,6 +11,7 @@ import {
     PopoverCloseButton,
     PopoverAnchor,
     Portal,
+    Box,
 } from "@chakra-ui/react";
 import { IsMobile } from "../../../utils/IsMobile";
 import ToggleColorButton from "../ToggleColorButton/ToggleColorButton";
@@ -23,9 +24,11 @@ import { IoSearchSharp } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CategoryModel } from '../../../main/hooks/useCategoryModel';
+import { useShopCar } from '../../../main/hooks/useShopCar';
 
 export default function Header() {
     const history = useNavigate()
+    const { ShopCar } = useShopCar()
     const { onChangeValue } = CategoryModel()
     const goToStore = () => {
         onChangeValue(undefined)
@@ -63,13 +66,19 @@ export default function Header() {
                     </Popover>
                     <ListItem><IoSearchSharp className='headerSvg' /></ListItem>
                     <ListItem><FaRegHeart className='headerSvg' /></ListItem>
-                    <ListItem onClick={() => history('/home/shop-car/')}><MdOutlineShoppingCart className='headerSvg' /></ListItem>
+                    <ListItem onClick={() => history('/home/shop-car/')} position='relative'>
+                        {ShopCar?.products.length > 0 && <Box id='shop-car-overlay' >{ShopCar.products.length}</Box>}
+                        <MdOutlineShoppingCart className='headerSvg' />
+                    </ListItem>
                 </Flex>
             </>)
         else
             return (<>
                 <Sidebar />
-                <ListItem mr='1rem' onClick={() => history('/home/shop-car/')}><MdOutlineShoppingCart className='headerSvg' /></ListItem>
+                <ListItem mr='1rem' onClick={() => history('/home/shop-car/')} position='relative'>
+                    {ShopCar?.products.length > 0 && <Box id='shop-car-overlay' >{ShopCar.products.length}</Box>}
+                    <MdOutlineShoppingCart className='headerSvg' />
+                </ListItem>
             </>)
     }
     return (
