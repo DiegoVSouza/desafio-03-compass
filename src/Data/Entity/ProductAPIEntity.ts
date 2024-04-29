@@ -3,7 +3,7 @@ import { CategoryAPIEntity } from "./CategoryAPIEntity";
 export interface ProductAPIEntity {
   id: string;
   name: string
-  categoryId: string
+  category_id: string
   category: CategoryAPIEntity;
   description: string;
   large_description: string;
