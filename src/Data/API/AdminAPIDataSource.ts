@@ -6,7 +6,7 @@ import { AdminAPIEntity } from "../Entity/AdminAPIEntity";
 export default class AdminAPIDataSourceImpl implements AdminDataSource {
   async getAdmins(): Promise<AdminAPIEntity[]> {
     try {
-      const { data } = await api.get('/api/v1/admin')
+      const { data } = await api.get('/admin')
       return data;
     } catch (error: any) {
       console.log(error.response.data)
@@ -16,7 +16,7 @@ export default class AdminAPIDataSourceImpl implements AdminDataSource {
 
   async postAdmins(postData: AdminPost): Promise<AdminAPIEntity> {
     try {
-      const { data } = await api.post('/api/v1/admin', postData)
+      const { data } = await api.post('/admin', postData)
       return data;
     } catch (error: any) {
       console.log(error.response.data)
@@ -25,7 +25,7 @@ export default class AdminAPIDataSourceImpl implements AdminDataSource {
   }
   async putAdmins(putData: AdminPut): Promise<AdminAPIEntity> {
     try {
-      const { data } = await api.put('/api/v1/admin', putData)
+      const { data } = await api.put('/admin', putData)
       return data;
     } catch (error: any) {
       console.log(error.response.data)
@@ -34,7 +34,7 @@ export default class AdminAPIDataSourceImpl implements AdminDataSource {
   }
   async deleteAdmins(adminId:string): Promise<AdminAPIEntity> {
     try {
-      const { data } = await api.delete(`/api/v1/admin/${adminId}`)
+      const { data } = await api.delete(`/admin/${adminId}`)
       return data;
     } catch (error: any) {
       console.log(error.response.data)

@@ -7,7 +7,7 @@ import { UserAPIEntity } from "../Entity/UserAPIEntity";
 export default class UserAPIDataSourceImpl implements UserDataSource {
   async getUsers(): Promise<UserAPIEntity[]> {
     try {
-      const { data } = await api.get('/api/v1/user')
+      const { data } = await api.get('/user')
       return data;
     } catch (error: any) {
       console.log(error.response.data)
@@ -17,7 +17,7 @@ export default class UserAPIDataSourceImpl implements UserDataSource {
 
   async postUsers(postData: UserPost): Promise<UserAPIEntity> {
     try {
-      const { data } = await api.post('/api/v1/user', postData)
+      const { data } = await api.post('/user', postData)
       return data;
     } catch (error: any) {
       console.log(error.response.data)
@@ -26,7 +26,7 @@ export default class UserAPIDataSourceImpl implements UserDataSource {
   }
   async putUsers(putData: UserPut): Promise<UserAPIEntity> {
     try {
-      const { data } = await api.put(`/api/v1/User/${putData.id}`, putData)
+      const { data } = await api.put(`/User/${putData.id}`, putData)
       return data;
     } catch (error: any) {
       console.log(error.response.data)
@@ -35,7 +35,7 @@ export default class UserAPIDataSourceImpl implements UserDataSource {
   }
   async deleteUsers(UserId:string): Promise<UserAPIEntity> {
     try {
-      const { data } = await api.delete(`/api/v1/User/${UserId}`)
+      const { data } = await api.delete(`/User/${UserId}`)
       return data;
     } catch (error: any) {
       console.log(error.response.data)
