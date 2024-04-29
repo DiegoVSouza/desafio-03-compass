@@ -28,6 +28,7 @@ const Sidebar = () => {
     const goToStore = () => {
         onChangeValue(undefined)
         history('/home/shop/')
+        onClose()
     }
     return (
         <>
