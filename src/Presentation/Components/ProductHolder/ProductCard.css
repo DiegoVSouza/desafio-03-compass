@@ -28,6 +28,13 @@
 .discount {
   background-color: var(--red-01);
 }
+
 .is-new {
   background-color: var(--green-01);
+}
+
+#list-description {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

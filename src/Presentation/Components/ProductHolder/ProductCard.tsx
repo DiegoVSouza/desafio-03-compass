@@ -9,28 +9,39 @@ import { LuArrowLeftRight } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa6";
 import formatCurrency from '../../../utils/FormatCurrency';
 import { ProductModel } from '../../../main/hooks/useProductModel';
+import { CategoryModel } from '../../../main/hooks/useCategoryModel';
+import TruncatedText from '../Inputs/TruncatedText';
 
 interface ProductCardInterface {
-    product: Product
+    product: Product;
+    isList: boolean;
 }
 
-export default function ProductCard({ product }: ProductCardInterface) {
+export default function ProductCard({ product, isList }: ProductCardInterface) {
     const [isHover, setIsHover] = useState(false)
     const { onChangeValue } = ProductModel()
+    const { onChangeValue: onChangeValueCategory } = CategoryModel()
     const history = useNavigate()
     const goToProductPage = () => {
         onChangeValue(product.id)
+        onChangeValueCategory(product.category_id)
         history(`/home/shop/${product.name.split(' ').join('-').toLocaleLowerCase()}`)
     }
+    const goToShopCategory = () => {
+        onChangeValueCategory(product.category.id)
+        history(`/home/shop`)
+    }
     return (
-        <Box textAlign='left' w='18rem' className='product-card' position='relative'
+        <Flex direction={isList ? 'row' : 'column'} textAlign='left' w={isList ? '100%' : '18rem'} className='product-card' position='relative'
             onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
             {product.discount_percent > 0 && <Box className='stamp discount' >-{Number(product.discount_percent).toFixed(0)}%</Box>}
             {product.is_new && <Box className='stamp is-new' >New!</Box>}
-            <Image w='100%' height='19rem' src={product.attributes[0].image_link} />
-            <Box padding='1rem 0 2rem 1rem' gap='0.5rem'>
+            <Image w={isList ? 'auto' : '100%'} height='19rem' src={product.attributes[0].image_link} />
+
+
+            <Box padding='1rem 0 2rem 1rem' gap='0.5rem' overflow='hidden'>
                 <Text cursor='pointer' fontSize='1.5rem' fontWeight='bold'>{product.name}</Text>
-                <Text cursor='pointer' className='text-secundary' fontSize='1rem' fontWeight='medium'>{product.category.name}</Text>
+                <Text cursor='pointer' onClick={() => goToShopCategory()} className='text-secundary' fontSize='1rem' fontWeight='medium'>{product.category.name}</Text>
                 {product.discount_percent > 0 ?
                     <Flex gap='1rem'>
                         <Text fontSize='1.25rem' fontWeight='bold'>{formatCurrency(product.discount_price)}</Text>
@@ -39,6 +50,12 @@ export default function ProductCard({ product }: ProductCardInterface) {
                     :
                     <Text fontSize='1.25rem' fontWeight='bold'>{formatCurrency(product.price)}</Text>
                 }
+
+                {isList && <>
+                    <Text className='text-secundary' mt='1rem' >Descrição</Text>
+                    <Text id='list-description' fontSize='1.25rem'  >{product.description}</Text>
+                </>}
+
             </Box>
 
             {isHover && (
@@ -71,6 +88,6 @@ export default function ProductCard({ product }: ProductCardInterface) {
 
             )}
 
-        </Box>
+        </Flex>
     );
 }
