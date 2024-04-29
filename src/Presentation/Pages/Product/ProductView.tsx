@@ -14,7 +14,7 @@ export default function ProductView() {
     <main>
       <TittleBox isProduct={true} />
       {Product && <ProductComponent product={Product} />}
-      <ProductHolder limit={4} categoryId={Product?.category.id} pagination={false} title='Related Products' />
+      <ProductHolder categoryId={Product?.category_id} limit={4} pagination={false} title='Related Products' />
       <Box mb='4rem'></Box>
     </main>
   );

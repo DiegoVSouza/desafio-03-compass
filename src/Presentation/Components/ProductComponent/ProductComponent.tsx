@@ -9,6 +9,7 @@ import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import AddShopCar from '../ShopCarComponents/AddShopCar';
 import nlp from 'compromise'
+import { CategoryModel } from '../../../main/hooks/useCategoryModel';
 interface ProductComponentInterface {
   product: Product
 }
@@ -19,7 +20,7 @@ export default function ProductComponent({ product }: ProductComponentInterface)
   let sizes = sizesDuplicated.filter((size, index) => sizesDuplicated.indexOf(size) === index);
   let colorsDuplicated = product.attributes.map(item => item.color)
   let colors = colorsDuplicated.filter((size, index) => colorsDuplicated.indexOf(size) === index);
-  
+ 
   const [sizesArray, setSizesArray] = useState<string[]>([''])
   const [colorsArray, setColorsArray] = useState<string[]>([''])
   const [featureImage, setFeatureImage] = useState('')
@@ -28,7 +29,7 @@ export default function ProductComponent({ product }: ProductComponentInterface)
   const [currentAttributeId, setCurrentAttributeId] = useState('')
 
   useEffect(() => {
-    
+
     setFeatureImage(product.attributes[0].image_link)
     setSizesArray(sizes)
     setColorsArray(colors)

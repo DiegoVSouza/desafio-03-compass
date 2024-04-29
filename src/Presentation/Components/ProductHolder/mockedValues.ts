@@ -4,7 +4,7 @@ export const productsMockUp: Product[] = [
   {
     id: "1",
     name: "Product 1",
-    categoryId: "category1",
+    category_id: "category1",
     category: {
       id: "category1",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -34,7 +34,7 @@ export const productsMockUp: Product[] = [
   {
     id: "2",
     name: "Product 2",
-    categoryId: "category2",
+    category_id: "category2",
     category: {
       id: "category2",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -71,7 +71,7 @@ export const productsMockUp: Product[] = [
   {
     id: "3",
     name: "Product 3",
-    categoryId: "category1",
+    category_id: "category1",
     category: {
       id: "category1",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -101,7 +101,7 @@ export const productsMockUp: Product[] = [
   {
     id: "4",
     name: "Product 4",
-    categoryId: "category3",
+    category_id: "category3",
     category: {
       id: "category3",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -131,7 +131,7 @@ export const productsMockUp: Product[] = [
   {
     id: "5",
     name: "Product 5",
-    categoryId: "category2",
+    category_id: "category2",
     category: {
       id: "category2",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -161,7 +161,7 @@ export const productsMockUp: Product[] = [
   {
     id: "6",
     name: "Product 6",
-    categoryId: "category1",
+    category_id: "category1",
     category: {
       id: "category1",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -191,7 +191,7 @@ export const productsMockUp: Product[] = [
   {
     id: "7",
     name: "Product 7",
-    categoryId: "category3",
+    category_id: "category3",
     category: {
       id: "category3",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -221,7 +221,7 @@ export const productsMockUp: Product[] = [
   {
     id: "8",
     name: "Product 8",
-    categoryId: "category2",
+    category_id: "category2",
     category: {
       id: "category2",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -251,7 +251,7 @@ export const productsMockUp: Product[] = [
   {
     id: "9",
     name: "Product 9",
-    categoryId: "category1",
+    category_id: "category1",
     category: {
       id: "category1",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -281,7 +281,7 @@ export const productsMockUp: Product[] = [
   {
     id: "10",
     name: "Product 10",
-    categoryId: "category3",
+    category_id: "category3",
     category: {
       id: "category3",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -311,7 +311,7 @@ export const productsMockUp: Product[] = [
   {
     id: "11",
     name: "Product 1",
-    categoryId: "category1",
+    category_id: "category1",
     category: {
       id: "category1",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -341,7 +341,7 @@ export const productsMockUp: Product[] = [
   {
     id: "12",
     name: "Product 2",
-    categoryId: "category2",
+    category_id: "category2",
     category: {
       id: "category2",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -371,7 +371,7 @@ export const productsMockUp: Product[] = [
   {
     id: "13",
     name: "Product 3",
-    categoryId: "category1",
+    category_id: "category1",
     category: {
       id: "category1",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -401,7 +401,7 @@ export const productsMockUp: Product[] = [
   {
     id: "14",
     name: "Product 4",
-    categoryId: "category3",
+    category_id: "category3",
     category: {
       id: "category3",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -431,7 +431,7 @@ export const productsMockUp: Product[] = [
   {
     id: "15",
     name: "Product 5",
-    categoryId: "category2",
+    category_id: "category2",
     category: {
       id: "category2",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -461,7 +461,7 @@ export const productsMockUp: Product[] = [
   {
     id: "16",
     name: "Product 6",
-    categoryId: "category1",
+    category_id: "category1",
     category: {
       id: "category1",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -491,7 +491,7 @@ export const productsMockUp: Product[] = [
   {
     id: "17",
     name: "Product 7",
-    categoryId: "category3",
+    category_id: "category3",
     category: {
       id: "category3",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -521,7 +521,7 @@ export const productsMockUp: Product[] = [
   {
     id: "18",
     name: "Product 8",
-    categoryId: "category2",
+    category_id: "category2",
     category: {
       id: "category2",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -551,7 +551,7 @@ export const productsMockUp: Product[] = [
   {
     id: "19",
     name: "Product 9",
-    categoryId: "category1",
+    category_id: "category1",
     category: {
       id: "category1",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',
@@ -581,7 +581,7 @@ export const productsMockUp: Product[] = [
   {
     id: "20",
     name: "Product 10",
-    categoryId: "category3",
+    category_id: "category3",
     category: {
       id: "category3",
       image_link: 'https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eXDN~~SIONEDUSYZ24UpXRHM~QdpUbJ1TDVyH-ZgTLjT5CP94xJPqJoRP48OIVtBzNoROXqjwlDsAnTV1~nI~dCL9wkKC3nqcyoReWK3i53vtA~4moc7r4AXw5eMnabZGZjRl0zP-FwMnkoYMhp4lS2Pkx6zCdZbgIOL0f4tOQZqeQIGjFPzbDP4UeKSxdDXRzYu6jBaeS2knZK0uPyIbsj1~H1tc81llFHX60fyrCqbME3jYDKpxuwMM9JayaHLqBECWayib51991JmATWPgzwFF5UJzEwsP09ahI0ackudCtUxovJx6ic86TYRYQkb91hUALJOJGITSLvIik4YYA__',

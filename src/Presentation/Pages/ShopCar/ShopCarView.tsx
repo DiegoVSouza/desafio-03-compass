@@ -57,7 +57,7 @@ export default function ShopCarView() {
                   <Image w='15rem' h='15rem' objectFit='cover' src={item.image_link} />
                   <Box ml={['0', '0', '2rem', '5.25rem', '5.25rem']} mt={['2rem', '2rem', '0', '0', '0']}>
                     <Text fontWeight='bold' fontSize='1rem' mb='2rem'>{upperCaseFirstLetter(item.name)}</Text>
-                    <Text className='especifications' mb='1rem'>{item.size}</Text>
+                    <Text className='especifications' mb='1rem'>{item.size.toUpperCase()}</Text>
                     <Text className='especifications' mb='1rem'>{upperCaseFirstLetter(item.color)}</Text>
                     {item.discount_percent > 0 ?
                       <Flex gap='1rem'>

@@ -6,10 +6,11 @@ import './ShopView.css'
 
 export default function ShopView() {
   const { Category } = CategoryModel()
+
   return (
     <main>
       <TittleBox />
-      <ProductHolder categoryId={Category?.id} limit={16} pagination={true} />
+      <ProductHolder limit={16} pagination={true} categoryId={Category?.id} />
       <Features />
     </main>
   );
