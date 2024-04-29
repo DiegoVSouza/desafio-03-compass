@@ -1,9 +1,9 @@
 import { Text, Flex, Image, Box } from '@chakra-ui/react';
 import './Features.css';
-import trophy from '../../assets/images/trophy 1.svg'
-import guarantee from '../../assets/images/guarantee.svg'
-import shipping from '../../assets/images/shipping.svg'
-import customerSupport from '../../assets/images/customer-support.svg'
+import trophy from '../.../public/assets/imagestrophy 1.svg'
+import guarantee from '../.../public/assets/imagesguarantee.svg'
+import shipping from '../.../public/assets/imagesshipping.svg'
+import customerSupport from '../.../public/assets/imagescustomer-support.svg'
 
 export default function Features() {
 

@@ -17,7 +17,7 @@ import { IsMobile } from "../../../utils/IsMobile";
 import ToggleColorButton from "../ToggleColorButton/ToggleColorButton";
 import { useNavigate } from "react-router-dom";
 import { CiCirclePlus } from "react-icons/ci";
-import logo from '../../assets/images/logo.svg'
+import logo from './public./public/assets/imageslogo.svg'
 import Sidebar from "../SideBar/SideBar";
 import { FaRegUser } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";

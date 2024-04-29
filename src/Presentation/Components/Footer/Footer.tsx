@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import './Footer.css'
 import { Box, Flex, Image, Input, Text, Button, Divider } from "@chakra-ui/react";
-import trophy from '../../assets/images/trophy 1.svg'
+import trophy from '../.../public/assets/imagestrophy 1.svg'
 export default function Footer() {
     return (
         <footer id="pagFooter">
