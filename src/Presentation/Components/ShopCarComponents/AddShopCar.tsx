@@ -18,10 +18,9 @@ interface AddShopCarInterface {
 }
 
 export default function AddShopCar({ id, color, size, qtd = 1, compact = false }: AddShopCarInterface) {
-    const [quantity, setQuantity] = useState(compact ? qtd : 1);
+    const [quantity, setQuantity] = useState(qtd);
     const { onAddProduct, onChangeShopCarProduct, onRemoveProduct } = useShopCar()
     const { Product }= ProductModel()
-
     const history = useNavigate()
 
     const currentQtd = Product?.attributes.find(item => item.id === id)?.qtd || 0
