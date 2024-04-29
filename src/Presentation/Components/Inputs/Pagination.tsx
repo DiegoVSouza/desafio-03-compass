@@ -1,5 +1,7 @@
 import { Button, Flex } from "@chakra-ui/react";
 import './Pagination.css'
+import { IsMobile } from "../../../utils/IsMobile";
+
 interface PaginationProps {
   actualPage: number;
   numberOfpages: number;
@@ -13,7 +15,7 @@ export default function Pagination({
 }: PaginationProps) {
   const renderPages = () => {
     const pages = [];
-    const maxPages = 3; // Define o número máximo de páginas visíveis antes de exibir "..."
+    const maxPages = IsMobile() ? 3 : 1; 
     const firstPage = Math.max(1, actualPage - Math.floor(maxPages / 2));
     const lastPage = Math.min(numberOfpages, firstPage + maxPages - 1);
 
@@ -27,12 +29,12 @@ export default function Pagination({
 
     if (firstPage > 1) {
       pages.push(
-        <Button key="1"  onClick={() => onClick(1)}>
+        <Button key="1" onClick={() => onClick(1)}>
           1
         </Button>
       );
       if (firstPage > 2) {
-        pages.push(<Button key="ellipsis1"  disabled>...</Button>);
+        pages.push(<Button key="ellipsis1" disabled>...</Button>);
       }
     }
 
@@ -70,5 +72,15 @@ export default function Pagination({
     return pages;
   };
 
-  return <Flex id="pagination" w='100%' padding={['1rem', '0', '0', '0', '0']} gap={['1rem', '2.3rem', '2.3rem', '2.3rem', '2.3rem']}  justifyContent='center'>{renderPages()}</Flex>;
+  return (
+    <Flex
+      id="pagination"
+      w="100%"
+      padding={['1rem', '0', '0', '0', '0']}
+      gap={['1rem', '2.3rem', '2.3rem', '2.3rem', '2.3rem']}
+      justifyContent="center"
+    >
+      {renderPages()}
+    </Flex>
+  );
 }
