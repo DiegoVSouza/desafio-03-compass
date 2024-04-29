@@ -2,7 +2,7 @@ import React from "react";
 import './TittleBox.css'
 import { Text, Flex, Image, Box } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
-import bigger from '../.../public/assets/imagesbigger than.svg'
+import bigger from './public/assets/images/bigger than.svg'
 import { upperCaseFirstLetter } from "../../../utils/TextUltis";
 
 interface TittleBoxInterface {

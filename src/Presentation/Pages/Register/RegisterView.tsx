@@ -7,7 +7,7 @@ import { Login } from '../../../Domain/Model/Token';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import InputComponent from '../../Components/Inputs/InputComponent';
-import logo from '../.../public/assets/imageslogo.svg'
+import logo from './public/assets/images/logo.svg'
 import './RegisterView.css'
 import ButtonComponent from '../../Components/Inputs/ButtonComponent';
 import { UserPost } from '../../../Domain/Model/User';
