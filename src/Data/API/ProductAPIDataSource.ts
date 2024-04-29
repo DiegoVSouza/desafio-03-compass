@@ -55,8 +55,6 @@ export default class ProductAPIDataSourceImpl implements ProductDataSource {
         }
       }
 
-      console.log('>>>>>>>>',params)
-
       const { data } = await api.get(url);
       return data;
     } catch (error: any) {
