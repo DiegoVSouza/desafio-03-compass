@@ -14,7 +14,7 @@ import {
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useNavigate } from 'react-router-dom';
 import ToggleColorButton from '../ToggleColorButton/ToggleColorButton';
-import logo from './public/assets/images/logo.svg'
+import logo from '/vercel/path0/public/assets/images/logo.svg'
 import { CategoryModel } from '../../../main/hooks/useCategoryModel';
 
 const Sidebar = () => {
