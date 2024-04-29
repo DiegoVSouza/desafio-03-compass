@@ -42,7 +42,7 @@ export default function ShopCarView() {
 
   const totalDiscount = ()=>{
     let discount = 1 - (realizeTheSumSubTotal()/ realizeTheSumSubTotalNoDiscount())
-    return discount.toFixed(2)
+    return (discount * 100).toFixed(2)
   }
 
   return (
