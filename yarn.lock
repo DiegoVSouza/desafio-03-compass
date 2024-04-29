@@ -10715,6 +10715,11 @@ react-fast-compare@3.2.2:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.2.tgz#929a97a532304ce9fee4bcae44234f1ce2c21d49"
   integrity sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==
 
+react-floating-label-input@^4.3.4:
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/react-floating-label-input/-/react-floating-label-input-4.3.4.tgz#d7afb011f7666c24f3deeec704258912be60358c"
+  integrity sha512-FFIeDbbH1uuVBSmzgNg4lkhwlJIHQ8ATfqJfct3ueWgDczHugh4p1e4w3VfMoeFti3EBewU3tt8RLSVLIP1iEA==
+
 react-focus-lock@^2.9.4:
   version "2.11.2"
   resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.11.2.tgz#dcc9a0dde630f0b9c694b823066f1b954c024422"
