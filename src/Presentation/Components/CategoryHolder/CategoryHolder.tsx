@@ -16,7 +16,7 @@ export default function CategoryHolder({ title, quantity }: CategoryHolderInterf
     const { Categorys, getCategorys, onChangeValue } = CategoryModel()
 
     useEffect(() => {
-        getCategorys({ limit: quantity }).then(() => {
+        getCategorys().then(() => {
             setIsLoading(false)
         })
     }, [])
@@ -26,15 +26,13 @@ export default function CategoryHolder({ title, quantity }: CategoryHolderInterf
         history('/home/shop/')
     }
 
-    
-
     return (
         <Box as='section' mb='3.5rem' textAlign='center' padding={['0 1.5rem', '0 2rem', '0 3rem', '0 6rem', '0 8rem']} width='100%'>
             {isLoading ? <LoadingSpinner /> :
                 <>
                     <Text mb='5.5rem' fontSize='2rem' fontWeight='bold'>{title}</Text>
                     <Flex gap='1.25rem' flexWrap='wrap' justifyContent='center'>
-                        {Categorys.map(item => (
+                        {Categorys.length && Categorys.slice(0, quantity).map(item => (
                             <Box w='24rem' key={item.id} className='category' onClick={()=>goToShopCategory(item.id)}>
                                 <Image height='30rem' width='100%' objectFit='cover' src={item.image_link} borderRadius='10px' />
                                 <Text pt='2rem' fontWeight='bold' fontSize='1.5rem'>{item.name}</Text>
